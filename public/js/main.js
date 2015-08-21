@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('a.index-learn-more').delay(100).fadeOut(1500);
     $('#carousel').delay(100).fadeIn(1500);
 
-    $('.index-title').animate({top: "-75px"});
+    $('.index-title').animate({top: "-30px"});
     $('footer').animate({bottom: "-100px"});
   });
 });
