@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
   $(window).load(function() {
-    $('#carousel').fadeOut(50);
     $('#status').fadeOut(1000);
     $('#preloader').delay(350).fadeOut('slow');
   });
@@ -9,9 +8,10 @@ $(document).ready(function() {
   $('.index-learn-more').click(function() {
     $('.index-subtitle').delay(100).fadeOut(1500);
     $('a.index-learn-more').delay(100).fadeOut(1500);
-    $('#carousel').delay(100).fadeIn(1500);
 
-    $('.index-title').animate({top: "-75px"});
-    $('footer').animate({bottom: "-100px"});
+    move('.index-title').set('margin-top', 150).end();
+    move('.index-subimage').set('margin-bottom', -550).end(function() {
+      console.log("This finished");
+    });
   });
 });

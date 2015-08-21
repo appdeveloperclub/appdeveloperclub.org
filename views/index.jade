@@ -1,0 +1,66 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='csrf-token', content=_csrf)
+    title #{title} - App Developer Club
+    != css('index')
+  body
+    include partials/flash
+
+    #preloader
+      #status
+        .status-mes
+
+    header.index
+      .container-fluid.index-container
+        p.index-title
+          | AppDeveloperClub
+        p.index-subtitle Dream. Create. Repeat.
+
+        a.btn.btn-primary.btn-lg.page-scroll.index-learn-more
+          | Learn More
+
+    #carousel.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#carousel', data-slide-to='0')
+        li(data-target='#carousel', data-slide-to='1')
+        li(data-target='#carousel', data-slide-to='2')
+        li(data-target='#carousel', data-slide-to='3')
+      .carousel-inner
+        .item.active
+          .index-carousel-item
+            p.index-carousel-title
+              | About Us
+            p.index-carousel-text
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita illum atque maxime, quidem, suscipit a mollitia numquam quam, facere possimus minus accusamus dolore obcaecati cum enim. Officiis non debitis nihil!  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, sed placeat doloremque eius sit. Iste ipsum, aperiam, deserunt, aliquid ipsa natus corporis sit nostrum nisi quos distinctio suscipit provident ad!
+        .item
+          .index-carousel-item
+            p.index-carousel-title
+              | Projects
+            p.index-carousel-text
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla eum esse, accusamus sit veniam, dolor saepe non accusantium quaerat recusandae debitis ea, explicabo deserunt obcaecati sunt ex similique illum! Quaerat.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quisquam eos saepe adipisci corporis possimus omnis laudantium dignissimos unde soluta commodi recusandae totam amet veritatis assumenda excepturi, reprehenderit, iste iure!
+        .item
+          .index-carousel-item
+            p.index-carousel-title
+              | Connections
+            p.index-carousel-text
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit amet odit, ullam officia nam modi iure quisquam pariatur maiores, praesentium repellat cum tempore eligendi est illo natus, et nobis alias.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti autem illum odio recusandae non voluptas cupiditate, quae perspiciatis necessitatibus, animi eaque assumenda in perferendis a, impedit ut, accusamus eius. Odit.
+        .item
+          .index-carousel-item
+            p.index-carousel-title
+              | Get Involved
+            p.index-carousel-text
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nemo voluptatem enim facilis voluptates ducimus, vel voluptas ullam? Perferendis error, reprehenderit incidunt itaque quam sequi, adipisci ducimus. Nulla, itaque, asperiores.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati rerum voluptas sint deserunt modi, eaque mollitia quibusdam quisquam sit odio voluptatem similique possimus voluptatibus tempora culpa error? Blanditiis, voluptatibus hic?
+      a.carousel-control.left(href='#carousel', data-slide='prev')
+        i.fa.fa-arrow-left.index-carousel-control
+      a.carousel-control.right(href='#carousel', data-slide='next')
+        i.fa.fa-arrow-right.index-carousel-control
+
+    footer.index
+      .index-subimage-container
+        .index-subimage
+
+    != js('application')
