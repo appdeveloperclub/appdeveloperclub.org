@@ -23,12 +23,17 @@ $(document).ready(function() {
     request.onreadystatechange = function() {
       if (this.readyState == 4) {
         if (this.status == 200) {
-          $('.alert-success .index-carousel-alert-text').text('Welcome! ' + this.responseText);
-          $('.alert-success').show()
-          console.log(this.responseText);
+          if (this.responseText !== '') {
+            $('.index-alert-success .index-carousel-alert-text').text('Welcome to ADC, ' + this.responseText);
+            $('.index-alert-success').show()
+            $('.index-alert-failure').hide()
+          } else {
+            $('.index-alert-failure').show()
+            $('.index-alert-success').hide()
+          }
         } else {
-          $('.alert-failure').show()
-          console.log('An error occurred, error code: ' + this.status);
+          $('.index-alert-failure').show()
+          $('.index-alert-success').hide()
           return;
         }
       }
