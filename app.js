@@ -75,11 +75,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use(lusca({
-  csrf: true,
-  xframe: 'SAMEORIGIN',
-  xssProtection: true
-}));
+// app.use(lusca({
+//   csrf: true,
+//   xframe: 'SAMEORIGIN',
+//   xssProtection: true
+// }));
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   next();
@@ -94,6 +94,8 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Primary app routes.
  */
 app.get('/', indexController.index);
+app.post('/emailtest', indexController.getemailtest);
+
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);

@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: Avenir;
-  src: url(../fonts/avenir.otf) format(opentype);
+  src: url(../fonts/avenir-ultralight.otf) format(opentype);
 }
 
 @import url(http://fonts.googleapis.com/css?family=Nunito:300);
@@ -27,6 +27,7 @@ html {
   position: relative;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -40,14 +41,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: auto;
-}
-
-
-// Alerts
-// -------------------------
-
-.alert {
-  margin-top: 20px;
+  overflow: hidden;
 }
 
 /*********************/
@@ -99,15 +93,11 @@ header.index {
     position: relative;
     padding-top: 20px;
     font-family: "Avenir", sans-serif;
-    margin-top: 20px;
-    font-size: 75px;
     color: #777777;
   }
 
   .index-subtitle {
     font-family: "Avenir", sans-serif;
-    margin-top: -25px;
-    font-size: 50px;
     color: #bb335b;
   }
 
@@ -129,14 +119,9 @@ header.index {
   position: relative;
 
   .index-subimage {
-    background-image: url(../img/WelcomeScreen.png);
-    display: block;
     position: absolute:
     bottom: 0;
-    overflow: hidden;
-    width: auto;
-    max-width: 600px;
-    height: 400px;
+    display: block;
     margin: 0 auto;
     background-size: cover;
     background-repeat: no-repeat;
@@ -175,19 +160,183 @@ header.index {
   }
 
   .index-carousel-item {
-    width: 500px;
+    position: relative;
     margin: 0 auto;
+
+    .index-carousel-title {
+      font-family: "Avenir", sans-serif;
+      color: #bb335b;
+    }
+
+    .index-carousel-text {
+      font-family: "Avenir", sans-serif;
+      color: #777777;
+    }
+
+    .index-carousel-btn {
+      font-family: "Avenir", sans-serif;
+      display: block;
+      margin: 0 auto;
+      background-color: #bb335b;
+      color: #fff;
+      width: 150px;
+
+      &:hover {
+        background-color: #842540;
+      }
+    }
+
+    .index-regis-btn {
+      display: inline-block;
+      float: right;
+      width: 38%;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    .alert-icon {
+      display: inline-block;
+      height: 30px;
+      width: auto;
+    }
+
+    .index-carousel-alert {
+      position: relative;
+      float: left;
+      margin-top: 15px;
+
+      .index-carousel-alert-text {
+        display: inline-block;
+      }
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    .alert-hidden {
+      display: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    input.index-field {
+      font-family: "Avenir", sans-serif;
+      font-size: 20px;
+      display: inline-block;
+      width: 60%;
+      float: left;
+      outline: none;
+    }
+  }
+}
+
+/***********************/
+/* Mobile Responsivity */
+/***********************/
+@media (min-width: 767px) {
+  .index-title {
+    margin-top: 40px;
+    font-size: 70px;
+  }
+
+  .index-subtitle {
+    margin-top: -22px;
+    font-size: 50px;
+  }
+
+  .index-subimage {
+    background-image: url(../img/Phones.png);
+    max-width: 706px;
+    min-height: 363px;
+    width: auto;
+  }
+
+  .index-carousel-item {
+    width: 500px;
   }
 
   .index-carousel-title {
-    font-family: "Avenir", sans-serif;
     font-size: 50px;
-    color: #bb335b;
   }
 
   .index-carousel-text {
-    font-family: "Avenir", sans-serif;
     font-size: 20px;
-    color: #777777;
+  }
+
+  .index-carousel-item img {
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .index-title {
+    margin-top: 30px;
+    font-size: 50px;
+  }
+
+  .index-subtitle {
+    margin-top: -15px;
+    font-size: 40px;
+  }
+
+  .index-subimage {
+    background-image: url(../img/phoneresp2.png);
+    max-width: 605px;
+    min-height: 440px;
+    width: auto;
+  }
+
+  .index-carousel-item {
+    width: 400px;
+  }
+
+  .index-carousel-title {
+    font-size: 40px;
+  }
+
+  .index-carousel-text {
+    font-size: 18px;
+  }
+
+  .index-carousel-item img {
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .index-title {
+    margin-top: 40px;
+    font-size: 40px;
+  }
+
+  .index-subtitle {
+    margin-top: -10px;
+    font-size: 30px;
+  }
+
+  .index-subimage {
+    background-image: url(../img/respscreen.png);
+    max-width: 624px;
+    height: 300px;
+    width: auto;
+  }
+
+  .index-carousel-item {
+    width: 60%;
+  }
+
+  .index-carousel-title {
+    font-size: 30px;
+  }
+
+  .index-carousel-text {
+    font-size: 16px;
+  }
+
+  .index-carousel-item img {
+    margin-top: 20px;
   }
 }

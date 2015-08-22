@@ -7,11 +7,32 @@ $(document).ready(function() {
   });
 
   $('.index-learn-more').click(function() {
-    $('.index-subtitle').delay(100).fadeOut(1500);
-    $('a.index-learn-more').delay(100).fadeOut(1500);
+    $('.index-subtitle').delay(100).fadeOut(1000);
+    $('a.index-learn-more').delay(100).fadeOut(1000);
     $('#carousel').delay(100).fadeIn(1500);
 
     $('.index-title').animate({top: "-30px"});
     $('footer').animate({bottom: "-100px"});
+  });
+
+  $('.index-regis-btn').click(function() {
+    var emailToTry = $('input.index-field').val();
+    var request = new XMLHttpRequest();
+    var params = "query=" + emailToTry;
+    request.open('POST', '/emailtest?' + params, true);
+    request.onreadystatechange = function() {
+      if (this.readyState == 4) {
+        if (this.status == 200) {
+          $('.alert-success .index-carousel-alert-text').text('Welcome! ' + this.responseText);
+          $('.alert-success').show()
+          console.log(this.responseText);
+        } else {
+          $('.alert-failure').show()
+          console.log('An error occurred, error code: ' + this.status);
+          return;
+        }
+      }
+    }
+    request.send();
   });
 });
