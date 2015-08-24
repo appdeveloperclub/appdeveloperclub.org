@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  .row
+    .col-sm-8
+      .page-header
+        h3.account-projects.header Your Projects
+    .col-sm-4
+      .page-header
+        a.btn.btn-primary.btn-sm(href='/account/projects/new')
+          i.fa.fa-rocket
+          | Create New Project
+
+  .row
+    .projects
+      - var parsedProjects = JSON.parse(projects);
+      each project in parsedProjects
+        .col-sm-4
+          .project
+            .row
+              p.project-name #{project.title}
+              p.project-tagline #{project.description}
+
