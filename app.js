@@ -100,16 +100,19 @@ app.post('/emailtest', indexController.getemailtest);
  * Primary app routes: Homepage, and rest of application.
  */
 app.get('/home', homeController.index);
+app.get('/logout', userController.logout);
 
 app.get('/explore/members', membersController.getMembers);
 app.get('/explore/members/:memberID', membersController.getSoloMember);
 
 app.get('/explore/projects', projectsController.getProjects);
-//app.get('/explore/projects/:projectID', projectsController.getSoloProject);
+app.get('/explore/projects/:projectID', projectsController.getSoloProject);
 
-app.get('/logout', userController.logout);
-app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.get('/account/projects', passportConf.isAuthenticated, userController.getProjects);
+app.get('/account/projects/new', passportConf.isAuthenticated, userController.getNewProject);
+app.post('/account/projects/new', passportConf.isAuthenticated, userController.postNewProject);
+
+app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 

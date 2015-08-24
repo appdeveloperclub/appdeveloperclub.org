@@ -2,6 +2,7 @@ var _ = require('lodash');
 var async = require('async');
 var crypto = require('crypto');
 var User = require('../models/User');
+var Project = require('../models/Project');
 var secrets = require('../config/secrets');
 
 /**
@@ -34,11 +35,37 @@ exports.getMembers = function(req, res) {
  */
 exports.getSoloMember = function(req, res) {
   var userID = req.params.memberID;
+  var associatedProjects = [];
+  var projectsFound = [];
 
   User.findOne({'_id': userID}, function(err, user) {
-    console.log(user.profile.name);
-    res.render('members/solo_member', {
-      title: 'Explore Members',
+    var userFound = {
+      name: user.profile.name,
+      website: user.profile.website,
+      email: user.email,
+      propic: user.gravatar(),
+      tagline: user.profile.tagline,
+      specialties: user.profile.specialties,
+      blurb: user.profile.blurb
+    };
+
+    Project.find({ teamMembers: user._id }, function(err, projects) {
+      projects.forEach(function(project) {
+        projectsFound.push({
+          title: project.title,
+          date: project.date,
+          description: project.description,
+          platform: project.platform,
+          projectPic: project.projectpic,
+          teamMembers: project.teamMembers
+        });
+      });
+
+      res.render('members/solo_member', {
+        title: 'Explore Members',
+        userFound: JSON.stringify(userFound),
+        projects: JSON.stringify(projectsFound)
+      });
     });
   });
 };
