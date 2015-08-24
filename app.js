@@ -27,7 +27,8 @@ var assets = require('connect-assets');
 var indexController = require('./controllers/index');
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
-var contactController = require('./controllers/contact');
+var projectsController = require('./controllers/projects');
+var membersController = require('./controllers/members');
 
 /**
  * API keys and Passport configuration.
@@ -99,9 +100,9 @@ app.post('/emailtest', indexController.getemailtest);
  * Primary app routes: Homepage, and rest of application.
  */
 app.get('/home', homeController.index);
+app.get('/explore/projects', projectsController.getProjects);
+app.get('/explore/members', membersController.getMembers);
 app.get('/logout', userController.logout);
-app.get('/contact', contactController.getContact);
-app.post('/contact', contactController.postContact);
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
