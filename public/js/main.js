@@ -24,7 +24,7 @@ $(document).ready(function() {
       if (this.readyState == 4) {
         if (this.status == 200) {
           if (this.responseText !== '') {
-            $('.index-alert-success .index-carousel-alert-text').text('Welcome to ADC, ' + this.responseText);
+            $('.index-alert-success .index-carousel-alert-text').text('Hi, ' + this.responseText);
             $('.index-alert-success').show()
             $('.index-alert-failure').hide()
           } else {

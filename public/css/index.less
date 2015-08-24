@@ -126,11 +126,13 @@ header.index {
   }
 }
 
+/*******************/
+/* Carousel Styles */
+/*******************/
+
 #carousel {
   position: absolute;
-  top: 100px;
   left: 0;
-  height: 320px;
   width: 100%;
 }
 
@@ -175,6 +177,7 @@ header.index {
       display: block;
       margin: 0 auto;
       background-color: #bb335b;
+      height: 35px;
       color: #fff;
       width: 150px;
 
@@ -199,16 +202,41 @@ header.index {
 
     .index-carousel-alert {
       position: relative;
-      text-align: center;
-      float: left;
-      margin-top: 15px;
 
       .index-carousel-alert-text {
         display: inline-block;
+        float: left;
+        margin-top: 10px;
       }
 
       i {
+        float: left;
         margin-right: 5px;
+        margin-top: 10px;
+      }
+
+      .github-button {
+        color: #fff;
+        background-color: #6d6d6d;
+
+        &:hover {
+          background-color: #a0a0a0;
+        }
+      }
+
+      a.index-carousel-btn {
+        margin-top: 10px;
+
+        i {
+          float: left;
+          margin-left: -3px;
+          margin-right: 8px;
+          margin-top: 2px;
+        }
+      }
+
+      .fa-check {
+        color: #49d880;
       }
     }
 
@@ -244,6 +272,11 @@ header.index {
   .index-subtitle {
     margin-top: -22px;
     font-size: 50px;
+  }
+
+  #carousel {
+    top: 100px;
+    height: 320px;
   }
 
   .index-learn-more {
@@ -290,6 +323,11 @@ header.index {
     margin-top: 20px;
   }
 
+  #carousel {
+    top: 100px;
+    height: 320px;
+  }
+
   .index-subimage {
     background-image: url(../img/phoneresp2.png);
     max-width: 605px;
@@ -330,6 +368,11 @@ header.index {
     margin-top: 5px;
   }
 
+  #carousel {
+    top: 25px;
+    height: 270px;
+  }
+
   .index-subimage {
     background-image: url(../img/respscreen.png);
     max-width: 624px;
@@ -347,10 +390,10 @@ header.index {
   }
 
   .index-carousel-text {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .index-carousel-item img {
-    margin-top: 20px;
+    margin-top: -10px;
   }
 }
