@@ -1,4 +1,38 @@
 extends ../layout
 
 block content
-  h1 This is the solo member page.
+  - var parsedUser = JSON.parse(userFound);
+  - var parsedProjects = JSON.parse(projects);
+
+  .row
+    .page-header
+      h3 #{parsedUser.name}
+
+  .row.solo-member
+    .col-sm-4.col-md-4
+      img.profile_pic(src="#{parsedUser.propic}", class='profile', width='200', height='200')
+    .col-sm-2.col-md-2.solo-member-fields-labels
+      p Tagline:
+      p Email:
+      p Website:
+      p Expertise:
+      p Description:
+    .col-sm-2.col-md-6.solo-member-fields-filled
+      p #{parsedUser.tagline}
+      p #{parsedUser.email}
+      p #{parsedUser.website}
+      p #{parsedUser.specialties}
+      p #{parsedUser.blurb}
+
+  .row
+    .page-header
+      h3 #{parsedUser.name}'s Projects
+
+  .row
+    each project in parsedProjects
+      .col-sm-4
+        .project
+          .row
+            p.project-name #{project.title}
+            p.project-tagline #{project.description}
+

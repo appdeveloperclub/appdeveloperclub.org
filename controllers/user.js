@@ -86,3 +86,44 @@ exports.postDeleteAccount = function(req, res, next) {
     res.redirect('/');
   });
 };
+
+/**
+ * GET /account/projects/new
+ * Display new project creation page.
+ */
+exports.getNewProject = function(req, res) {
+  res.render('account/new_project', {
+    title: 'Create a New Project'
+  });
+};
+
+/**
+ * POST /account/projects/new
+ * Create a new project.
+ */
+exports.postNewProject = function(req, res, next) {
+  req.assert('title', 'Must have a valid title').notEmpty();
+  req.assert('platform', 'Must have a valid platform target').notEmpty();
+  req.assert('description', 'Description must not be empty').notEmpty();
+  var errors = req.validationErrors();
+  if (errors) {
+    req.flash('errors', errors);
+    return res.redirect('/account/projects/new');
+  }
+  var project = new Project({
+    title: req.body.title,
+    platform: req.body.platform,
+    description: req.body.description,
+    teamMembers: [req.user._id]
+  });
+  Project.findOne({ title: req.body.title }, function(err, existingProject) {
+    if (existingProject) {
+      req.flash('errors', { msg: 'Project with that title already exists.' });
+      return res.redirect('/account/projects/new');
+    }
+    project.save(function(err) {
+      if (err) return next(err);
+      res.redirect('/account/projects');
+    });
+  });
+};

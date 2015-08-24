@@ -30,3 +30,25 @@ exports.getProjects = function(req, res) {
     });
   });
 };
+
+/**
+ * GET /explore/projects/:projectID
+ * Getting information on a single project.
+ */
+exports.getSoloProject = function(req, res) {
+  var userID = req.params.memberID;
+  User.findOne({'_id': userID}, function(err, user) {
+    var userFound = {
+      name: user.profile.name,
+      website: user.profile.website,
+      email: user.email,
+      propic: user.gravatar(),
+      tagline: user.profile.tagline,
+      specialties: user.profile.specialties,
+      blurb: user.profile.blurb
+    };
+    res.render('members/solo_member', {
+      title: 'Explore Members',
+    });
+  });
+};

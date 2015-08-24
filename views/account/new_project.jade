@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .container
+    h2.mentee-page-header
+      | Create a New Project
+
+    form.form-horizontal(role='form', method='POST')
+      input(type='hidden', name='_csrf', value=_csrf)
+      .form-group
+        label(class='col-sm-2 control-label', for='title') Project Title
+        .col-sm-8
+          input.form-control(type='text', name='title', id='title', autofocus=true)
+      .form-group
+        label(class='col-sm-2 control-label', for='platform') Platform Target
+        .col-sm-8
+          input.form-control(type='text', name='platform', id='platform')
+      .form-group
+        label(class='col-sm-2 control-label', for='description') Project Description
+        .col-sm-8
+          textarea.form-control(type='text', name='description', id='description', rows='5')
+      .form-group
+        .col-sm-offset-2.col-sm-8
+          button.btn.btn-primary(type='submit')
+            i.fa.fa-code
+            | Create Project
