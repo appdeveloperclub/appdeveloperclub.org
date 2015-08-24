@@ -7,12 +7,12 @@ $(document).ready(function() {
   });
 
   $('.index-learn-more').click(function() {
-    $('.index-subtitle').delay(100).fadeOut(1000);
-    $('a.index-learn-more').delay(100).fadeOut(1000);
+    $('.index-subtitle').delay(100).fadeOut(500);
+    $('a.index-learn-more').delay(100).fadeOut(500);
     $('#carousel').delay(100).fadeIn(1500);
 
-    $('.index-title').animate({top: "-30px"});
-    $('footer').animate({bottom: "-100px"});
+    $('.index-title').animate({top: "-30px"}, 800, "swing");
+    $('footer').animate({marginTop: "180px"}, 800, "swing");
   });
 
   $('.index-regis-btn').click(function() {

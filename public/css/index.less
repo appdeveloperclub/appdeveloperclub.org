@@ -31,17 +31,17 @@ html {
 }
 
 body {
+  position: relative;
   height: 100%;
   width: 100%;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
+  top:375px;
   background-color: #fff;
-  bottom: 0;
   width: 100%;
   height: auto;
-  overflow: hidden;
 }
 
 /*********************/
@@ -91,19 +91,24 @@ header.index {
 
   .index-title {
     position: relative;
-    padding-top: 20px;
+    padding-top: 60px;
     font-family: "Avenir", sans-serif;
     color: #777777;
+    font-size: 65px;
   }
 
   .index-subtitle {
     font-family: "Avenir", sans-serif;
     color: #bb335b;
+    font-size: 35px;
   }
 
   .index-learn-more {
     background-color: #bb335b;
     color: #fff;
+    height: 35px;
+    width: 150px;
+    line-height : 17px;
 
     &:hover {
       background-color: #842540;
@@ -114,15 +119,16 @@ header.index {
 .index-subimage-container {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   position: relative;
 
   .index-subimage {
-    display: block;
+    position: relative;
     margin: 0 auto;
+    max-width:42%;
+    height: auto;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: top center;
   }
 }
 
@@ -134,15 +140,20 @@ header.index {
   position: absolute;
   left: 0;
   width: 100%;
+  height: 500px;
+
 }
 
 .carousel {
   background: #fff;
-  margin-top: 20px;
+  margin-top: 70px;
   text-align: center;
+  height: 700px;
 
   .carousel-indicators li {
-    background-color: #444;
+    background-color: #bbbbbb;
+    position: relative;
+    top: 80px;
   }
 
   .carousel-indicators .active {
@@ -154,7 +165,7 @@ header.index {
   }
 
   .index-carousel-control {
-    margin-top: 125px;
+    margin-top: 145px;
     color: #bb335b;
   }
 
@@ -165,11 +176,14 @@ header.index {
     .index-carousel-title {
       font-family: "Avenir", sans-serif;
       color: #bb335b;
+      font-size: 35px;
     }
 
     .index-carousel-text {
       font-family: "Avenir", sans-serif;
       color: #777777;
+      margin-top: 50px;
+      font-size: 20px;
     }
 
     .index-carousel-btn {
@@ -180,6 +194,10 @@ header.index {
       height: 35px;
       color: #fff;
       width: 150px;
+      top: 60px;
+      padding-top:10px;
+      margin-top: 25px;
+      line-height : 17px;
 
       &:hover {
         background-color: #842540;
@@ -189,9 +207,10 @@ header.index {
     .index-regis-btn {
       display: inline-block;
       float: right;
-      width: 38%;
-      padding-top: 6px;
-      padding-bottom: 6px;
+      height: 32px;
+      width: 39%;
+      margin-top: 5px;
+      line-height: 16px;
     }
 
     .alert-icon {
@@ -212,7 +231,7 @@ header.index {
       i {
         float: left;
         margin-right: 5px;
-        margin-top: 10px;
+        margin-top: 1000px;
       }
 
       .github-button {
@@ -250,9 +269,12 @@ header.index {
 
     input.index-field {
       font-family: "Avenir", sans-serif;
-      font-size: 20px;
+      font-size: 16px;
+      text-align:center;
+      padding-top: 5px;
       display: inline-block;
       width: 60%;
+      margin-top: 5px;
       float: left;
       outline: none;
     }
