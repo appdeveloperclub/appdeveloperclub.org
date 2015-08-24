@@ -3,3 +3,16 @@ extends ../layout
 block content
   h1 Projects Page
   p.lead Alright! This is the projects page
+
+  .projects
+    - var parsedProjects = JSON.parse(projects);
+    each project in parsedProjects
+      .col-sm-4
+        .project
+          .row
+            p.project-name #{project.title}
+            p.project-tagline #{project.description}
+          //- .row.project-btn
+          //-   a.btn.btn-default.btn-sm.page-scroll(href='/explore/projects/' + project.memberID)
+          //-     i.fa.fa-paper-plane
+          //-     | Stalk this Member!

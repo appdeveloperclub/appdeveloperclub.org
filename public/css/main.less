@@ -53,16 +53,29 @@ footer {
   text-align: center;
 }
 
+.navbar-nav .profile_pic {
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+}
 
-// Alerts
-// -------------------------
+body > .container {
+  text-align: center;
+}
+
+/*****************/
+/* Alert Styles */
+/*****************/
 
 .alert {
   margin-top: 20px;
 }
 
-// Thumbnails
-// -------------------------
+/*******************/
+/* Thumnail Styles */
+/*******************/
 
 .thumbnail {
   padding: 0;
@@ -70,83 +83,43 @@ footer {
   box-shadow: 0 0 5px #ccc, inset 0 0 0 #000;
 }
 
-// Font Icons
-// -------------------------
+/*********************/
+/* Font Icons Styles */
+/*********************/
 
 .fa,
 [class^='ion-'] {
   margin-right: 6px;
 }
 
+/***********************/
+/* Members Page Styles */
+/***********************/
 
-/*********************/
-/* Index Page Styles */
-/*********************/
-
-#preloader {
-  background: #FFF;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 9999;
+.members {
+  margin-top: 20px;
 }
 
-#status, .status-mes {
-  background-image: url(../img/preloader.gif);
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 200px;
-  left: 50%;
-  margin: -100px 0 0 -100px;
-  position: absolute;
-  top: 50%;
+.member {
+  background-color: #eeeeee;
+  padding-top: 15px;
+  padding-bottom: 15px;
   width: 200px;
-}
+  margin: 0 auto;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  border: 1px solid #eee;
 
-.status-mes {
-  background: none;
-  left: 0;
-  margin: 0;
-  text-align: center;
-  top: 65%;
-}
+  img {
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    border-radius: 99em;
+    border: 1px solid #eee;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  }
 
-header.index {
-  font-family: 'Lato', sans-serif;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-
-  .index-container {
-
+  .member-tagline {
+    margin-top: 12px;
   }
 }
-
-.index-subimage-container {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  position: relative;
-}
-
-.index-subimage {
-  background-image: url(../img/WelcomeScreen.jpg);
-  display: block;
-  position: absolute:
-  bottom: 0;
-  width: auto;
-  height: 400px;
-  margin: 0 150px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  // -webkit-border-radius: 99em;
-  // -moz-border-radius: 99em;
-  // border-radius: 99em;
-  // border: 5px solid #eee;
-  // box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
-}
-
