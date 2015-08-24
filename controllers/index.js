@@ -11,7 +11,6 @@ exports.index = function(req, res) {
   });
 };
 
-
 /**
  * POST /
  * Return whether the user is a valid stanford affiliate.
@@ -25,7 +24,6 @@ exports.getemailtest = function(req, res) {
       console.log("Could not reach servers at Stanford WHO");
       return console.error('Request failed with error:', err);
     }
-
     var $ = cheerio.load(body);
     var name = $('#PublicProfile h2').text().trim();
     res.end(name);
