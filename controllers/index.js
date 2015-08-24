@@ -6,6 +6,8 @@ var cheerio = require('cheerio');
  * Home page.
  */
 exports.index = function(req, res) {
+  if (req.user)
+    return res.redirect('/home');
   res.render('index', {
     title: 'Index'
   });
