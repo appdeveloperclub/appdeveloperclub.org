@@ -9,7 +9,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var errorHandler = require('errorhandler');
-var lusca = require('lusca');
+// var lusca = require('lusca');
 var methodOverride = require('method-override');
 
 var _ = require('lodash');
