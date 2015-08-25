@@ -41,7 +41,7 @@ footer {
   top:375px;
   background-color: #fff;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /*********************/
@@ -91,16 +91,23 @@ header.index {
 
   .index-title {
     position: relative;
+    text-align:center;
     padding-top: 60px;
     font-family: "Avenir", sans-serif;
     color: #777777;
-    font-size: 65px;
+    -webkit-transition: font 1s ease, margin 1s ease;
+    -moz-transition: font 1s ease, margin 1s ease;
+    -o-transition: font 1s ease, margin 1s ease;
+    -ms-transition: font 1s ease, margin 1s ease;
   }
 
   .index-subtitle {
     font-family: "Avenir", sans-serif;
     color: #bb335b;
-    font-size: 35px;
+    -webkit-transition: font 1s ease, margin 1s ease;
+    -moz-transition: font 1s ease, margin 1s ease;
+    -o-transition: font 1s ease, margin 1s ease;
+    -ms-transition: font 1s ease, margin 1s ease;
   }
 
   .index-learn-more {
@@ -109,6 +116,10 @@ header.index {
     height: 35px;
     width: 150px;
     line-height : 17px;
+    -webkit-transition: font 1s ease, margin 1s ease;
+    -moz-transition: font 1s ease, margin 1s ease;
+    -o-transition: font 1s ease, margin 1s ease;
+    -ms-transition: font 1s ease, margin 1s ease;
 
     &:hover {
       background-color: #842540;
@@ -117,18 +128,21 @@ header.index {
 }
 
 .index-subimage-container {
-  width: 100%;
-  height: 100%;
   position: relative;
+
+  width: auto;
 
   .index-subimage {
     position: relative;
+    align: center;
     margin: 0 auto;
-    max-width:42%;
-    height: auto;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
   }
 }
 
@@ -141,7 +155,10 @@ header.index {
   left: 0;
   width: 100%;
   height: 500px;
-
+  -webkit-transition: top 1s ease, height 1s ease, margin 1s ease;
+  -moz-transition: top 1s ease, height 1s ease, margin 1s ease;
+  -o-transition: top 1s ease, height 1s ease, margin 1s ease;
+  -ms-transition: top 1s ease, height 1s ease, margin 1s ease;
 }
 
 .carousel {
@@ -149,12 +166,6 @@ header.index {
   margin-top: 70px;
   text-align: center;
   height: 700px;
-
-  .carousel-indicators li {
-    background-color: #bbbbbb;
-    position: relative;
-    top: 80px;
-  }
 
   .carousel-indicators .active {
     background-color: #bb335b;
@@ -182,8 +193,10 @@ header.index {
     .index-carousel-text {
       font-family: "Avenir", sans-serif;
       color: #777777;
-      margin-top: 50px;
-      font-size: 20px;
+      -webkit-transition: font 1s ease, margin 1s ease;
+      -moz-transition: font 1s ease, margin 1s ease;
+      -o-transition: font 1s ease, margin 1s ease;
+      -ms-transition: font 1s ease, margin 1s ease;
     }
 
     .index-carousel-btn {
@@ -288,17 +301,23 @@ header.index {
 @media (min-width: 767px) {
   .index-title {
     margin-top: 40px;
-    font-size: 70px;
+    font-size: 65px;
   }
 
   .index-subtitle {
     margin-top: -22px;
-    font-size: 50px;
+    font-size: 35px;
   }
 
   #carousel {
     top: 100px;
     height: 320px;
+  }
+
+  .carousel-indicators li {
+    background-color: #bbbbbb;
+    position: relative;
+    top: 80px;
   }
 
   .index-learn-more {
@@ -307,7 +326,7 @@ header.index {
 
   .index-subimage {
     background-image: url(../img/Phones.png);
-    max-width: 706px;
+    max-width: 500px;
     min-height: 363px;
     width: auto;
     bottom: 0;
@@ -322,7 +341,8 @@ header.index {
   }
 
   .index-carousel-text {
-    font-size: 20px;
+      margin-top: 50px;
+      font-size: 20px;
   }
 
   .index-carousel-item img {
@@ -338,7 +358,7 @@ header.index {
 
   .index-subtitle {
     margin-top: -15px;
-    font-size: 40px;
+    font-size: 25px;
   }
 
   .index-learn-more {
@@ -350,10 +370,16 @@ header.index {
     height: 320px;
   }
 
+  .carousel-indicators li {
+    background-color: #bbbbbb;
+    position: relative;
+    top: 80px;
+  }
+
   .index-subimage {
-    background-image: url(../img/phoneresp2.png);
-    max-width: 605px;
-    min-height: 440px;
+    background-image: url(../img/phones.png);
+    max-width: 475px;
+    min-height: 350px;
     width: auto;
     bottom: 0;
   }
@@ -367,6 +393,7 @@ header.index {
   }
 
   .index-carousel-text {
+    margin-top: 50px;
     font-size: 18px;
   }
 
@@ -377,13 +404,13 @@ header.index {
 
 @media (max-width: 640px) {
   .index-title {
-    margin-top: 10px;
-    font-size: 35px;
+    margin-top: -10px;
+    font-size: 40px;
   }
 
   .index-subtitle {
     margin-top: -10px;
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .index-learn-more {
@@ -391,16 +418,22 @@ header.index {
   }
 
   #carousel {
-    top: 25px;
-    height: 270px;
+    top: 10px;
+    height: 250px;
+  }
+
+  .carousel-indicators li {
+    background-color: #bbbbbb;
+    position: relative;
+    top: 130px;
   }
 
   .index-subimage {
     background-image: url(../img/respscreen.png);
-    max-width: 624px;
-    height: 300px;
-    width: auto;
-    bottom: -100px;
+    max-width: 408px;
+    height: 461px;
+    width: 350px;
+    bottom: 100px;
   }
 
   .index-carousel-item {
@@ -408,11 +441,12 @@ header.index {
   }
 
   .index-carousel-title {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .index-carousel-text {
-    font-size: 14px;
+    margin-top: 30px;
+    font-size: 16px;
   }
 
   .index-carousel-item img {
