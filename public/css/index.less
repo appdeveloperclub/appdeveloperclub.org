@@ -187,6 +187,7 @@ header.index {
     .index-carousel-title {
       font-family: "Avenir", sans-serif;
       color: #bb335b;
+      font-size: 35px;
     }
 
     .index-carousel-text {
@@ -297,8 +298,7 @@ header.index {
 /* Mobile Responsivity */
 /***********************/
 
-/*** 19"+ Screens ***/
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 767px) {
   .index-title {
     margin-top: 40px;
     font-size: 65px;
@@ -327,7 +327,7 @@ header.index {
   .index-subimage {
     background-image: url(../img/Phones.png);
     max-width: 500px;
-    min-height: 482px;
+    min-height: 363px;
     width: auto;
     bottom: 0;
   }
@@ -350,69 +350,15 @@ header.index {
   }
 }
 
-/*** 12"-15" Screens ***/
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 640px) and (max-width: 767px) {
   .index-title {
-    margin-top: 40px;
-    font-size: 65px;
-  }
-
-  .index-subtitle {
-    margin-top: -22px;
-    font-size: 35px;
-  }
-
-  #carousel {
-    top: 100px;
-    height: 320px;
-  }
-
-  .carousel-indicators li {
-    background-color: #bbbbbb;
-    position: relative;
-    top: 80px;
-  }
-
-  .index-learn-more {
-    margin-top: 20px;
-  }
-
-  .index-subimage {
-    background-image: url(../img/Phones.png);
-    max-width: 500px;
-    min-height: 482px;
-    width: auto;
-    bottom: 0;
-  }
-
-  .index-carousel-item {
-    width: 500px;
-  }
-
-  .index-carousel-title {
+    margin-top: 30px;
     font-size: 50px;
-  }
-
-  .index-carousel-text {
-      margin-top: 50px;
-      font-size: 20px;
-  }
-
-  .index-carousel-item img {
-    margin-top: -40px;
-  }
-}
-
-/*** Normal/Large Tablets ***/
-@media (min-width: 600px) and (max-width: 1023px) {
-  .index-title {
-    margin-top: 80px;
-    font-size: 60px;
   }
 
   .index-subtitle {
     margin-top: -15px;
-    font-size: 35px;
+    font-size: 25px;
   }
 
   .index-learn-more {
@@ -420,8 +366,8 @@ header.index {
   }
 
   #carousel {
-    top: 200px;
-    height: 450px;
+    top: 100px;
+    height: 320px;
   }
 
   .carousel-indicators li {
@@ -433,9 +379,9 @@ header.index {
   .index-subimage {
     background-image: url(../img/Phones.png);
     max-width: 475px;
-    min-height: 458px;
+    min-height: 350px;
     width: auto;
-    bottom: -260px;
+    bottom: 0;
   }
 
   .index-carousel-item {
@@ -456,11 +402,10 @@ header.index {
   }
 }
 
-/*** Normal Smartphones/Small Tablets ***/
-@media (min-width: 360px) and (max-width: 599px) {
+@media (max-width: 640px) {
   .index-title {
     margin-top: -10px;
-    font-size: 38px;
+    font-size: 40px;
   }
 
   .index-subtitle {
@@ -502,59 +447,6 @@ header.index {
   .index-carousel-text {
     margin-top: 30px;
     font-size: 16px;
-  }
-
-  .index-carousel-item img {
-    margin-top: -10px;
-  }
-}
-
-/*** Small Phones ***/
-@media (max-width: 359px) {
-  .index-title {
-    margin-top: -10px;
-    font-size: 30px;
-  }
-
-  .index-subtitle {
-    margin-top: -10px;
-    font-size: 15px;
-  }
-
-  .index-learn-more {
-    margin-top: 5px;
-  }
-
-  #carousel {
-    top: 10px;
-    height: 250px;
-  }
-
-  .carousel-indicators li {
-    background-color: #bbbbbb;
-    position: relative;
-    top: 130px;
-  }
-
-  .index-subimage {
-    background-image: url(../img/respscreen.png);
-    max-width: 310px;
-    height: 412px;
-    width: 310px;
-    bottom: 100px;
-  }
-
-  .index-carousel-item {
-    width: 60%;
-  }
-
-  .index-carousel-title {
-    font-size: 25px;
-  }
-
-  .index-carousel-text {
-    margin-top: 30px;
-    font-size: 14px;
   }
 
   .index-carousel-item img {
