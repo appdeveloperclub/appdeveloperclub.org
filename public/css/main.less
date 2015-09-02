@@ -49,6 +49,14 @@ footer {
   margin: -15px 15px -15px;
 }
 
+.navbar-default {
+  background: transparent;
+}
+
+.navbar-inner {
+  background: transparent;
+}
+
 .navbar-nav ul.dropdown-menu {
   text-align: center;
 }
@@ -96,11 +104,20 @@ body > .container {
 /* HomePage Styles */
 /*******************/
 
+.homepage-background {
+  height: 100%;
+  width: 100%;
+  background: #000 url(../img/home_background.png)  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
 .homepage-logo {
-  background-image: url(../img/homepagelogo.jpg);
+  background-image: url(../img/adclogo.png);
   position: relative;
   margin: 0 auto;
-  height: 300px;
+  height: 100px;
   width: auto;
   background-size: cover;
   background-repeat: no-repeat;
@@ -167,3 +184,7 @@ body > .container {
 .account-projects.header {
   margin-bottom: 12px;
 }
+
+/***********************/
+/* Mobile Responsivity */
+/***********************/

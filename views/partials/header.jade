@@ -1,40 +1,41 @@
 .navbar.navbar-default.navbar-fixed-top
-  .container
-    .navbar-header
-      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href='/home')
-        i.fa.fa-code
-        | App Developer Club
-    .collapse.navbar-collapse
-      ul.nav.navbar-nav
-        li(class=title=='Explore Projects'?'active':undefined)
-          a(href='/explore/projects') Explore Projects
-        li(class=title=='Explore Members'?'active':undefined)
-          a(href='/explore/members') Explore Members
-      ul.nav.navbar-nav.navbar-right
-        if user
-          li.dropdown(class=title=='Account Management'?'active':undefined)
-            a.dropdown-toggle(href='#', data-toggle='dropdown')
-              if user.profile.picture
-                img.profile_pic(src='#{user.profile.picture}')
-              else
-                img.profile_pic(src='#{user.gravatar(60)}')
-              | #{user.profile.name || user.email || user.id}&nbsp;
-              i.caret
-            ul.dropdown-menu
-              li
-                a(href='/account') My Account
-              li
-                a(href='/account/projects') My Projects
-              li.divider
-              li
-                a(href='http://code.appdeveloperclub.com') Private Repos
-              li
-                a(href='http://connect.appdeveloperclub.com') Members Portal
-              li.divider
-              li
-                a(href='/logout') Logout
+  .navbar-inner
+    .container
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/home')
+          i.fa.fa-code
+          | App Developer Club
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li(class=title=='Explore Projects'?'active':undefined)
+            a(href='/explore/projects') Explore Projects
+          li(class=title=='Explore Members'?'active':undefined)
+            a(href='/explore/members') Explore Members
+        ul.nav.navbar-nav.navbar-right
+          if user
+            li.dropdown(class=title=='Account Management'?'active':undefined)
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                if user.profile.picture
+                  img.profile_pic(src='#{user.profile.picture}')
+                else
+                  img.profile_pic(src='#{user.gravatar(60)}')
+                | #{user.profile.name || user.email || user.id}&nbsp;
+                i.caret
+              ul.dropdown-menu
+                li
+                  a(href='/account') My Account
+                li
+                  a(href='/account/projects') My Projects
+                li.divider
+                li
+                  a(href='http://code.appdeveloperclub.com') Private Repos
+                li
+                  a(href='http://connect.appdeveloperclub.com') Members Portal
+                li.divider
+                li
+                  a(href='/logout') Logout

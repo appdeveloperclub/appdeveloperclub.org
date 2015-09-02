@@ -1,20 +1,30 @@
 extends layout
 
 block content
-  .row
-    .homepage-logo
+  body.homepage-background
 
-  hr
-  .row
-    .col-sm-4
-      h2 Projects
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      a.btn.btn-default(href='/explore/projects', role='button') Explore Projects »
-    .col-sm-4
-      h2 Members
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      a.btn.btn-default(href='/explore/members', role='button') View Members »
-    .col-sm-4
-      h2 Register
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      a.btn.btn-default(href='/', role='button') Register now »
+    include partials/header
+
+    .container
+      include partials/flash
+
+      .row
+        .homepage-logo
+
+      hr
+      .row
+        .col-sm-4
+          img.home-icon(src='img/projects_icon.png')
+          h2 Projects
+          p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          a.btn.btn-default(href='/explore/projects', role='button') Explore Projects »
+        .col-sm-4
+          img.home-icon(src='img/ideas_icon.png')
+          h2 Members
+          p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          a.btn.btn-default(href='/explore/members', role='button') View Members »
+        .col-sm-4
+          img.home-icon(src='img/atom_icon.png')
+          h2 Register
+          p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          a.btn.btn-default(href='/', role='button') Register now »
