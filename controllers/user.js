@@ -7,6 +7,7 @@ var User = require('../models/User');
 var Project = require('../models/Project');
 var secrets = require('../config/secrets');
 
+
 /**
  * GET /logout
  * Log out.
@@ -16,15 +17,18 @@ exports.logout = function(req, res) {
   res.redirect('/');
 };
 
+
 /**
  * GET /account
  * Profile page.
  */
 exports.getAccount = function(req, res) {
   res.render('account/profile', {
-    title: 'Account Management'
+    title: 'Account Management',
+    pageBackground: 'general-background'
   });
 };
+
 
 /**
  * POST /account/profile
@@ -50,6 +54,7 @@ exports.postUpdateProfile = function(req, res, next) {
   });
 };
 
+
 /**
  * GET /account/projects
  * Displays projects associated with user.
@@ -69,10 +74,12 @@ exports.getProjects = function(req, res) {
     });
     res.render('account/projects', {
       title: 'Your Projects',
+      pageBackground: 'general-background',
       projects: JSON.stringify(projectsFound)
     });
   });
 };
+
 
 /**
  * POST /account/delete
@@ -87,15 +94,18 @@ exports.postDeleteAccount = function(req, res, next) {
   });
 };
 
+
 /**
  * GET /account/projects/new
  * Display new project creation page.
  */
 exports.getNewProject = function(req, res) {
   res.render('account/new_project', {
-    title: 'Create a New Project'
+    title: 'Create a New Project',
+    pageBackground: 'general-background'
   });
 };
+
 
 /**
  * POST /account/projects/new
