@@ -32,6 +32,7 @@ block content
     each project in parsedProjects
       .col-sm-4
         .project
+          a(href='/explore/projects/' + project.projectID)
           .row
             p.project-name #{project.title}
             p.project-tagline #{project.description}

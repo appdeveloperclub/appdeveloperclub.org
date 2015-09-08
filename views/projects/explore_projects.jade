@@ -4,9 +4,10 @@ block content
   .projects
     - var parsedProjects = JSON.parse(projects);
     each project in parsedProjects
-      .col-sm-3.project
-        a(href='/explore/projects/' + project.projectID)
+      .col-sm-4
+        .project
+          a(href='/explore/projects/' + project.projectID)
 
-        .row
-          p.project-name #{project.title}
-          p.project-tagline #{project.description}
+          .row
+            p.project-name #{project.title}
+            p.project-tagline #{project.description}

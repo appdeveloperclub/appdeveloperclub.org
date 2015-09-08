@@ -18,14 +18,14 @@ exports.index = function(req, res) {
  * Return whether the user is a valid stanford affiliate.
  */
 exports.getemailtest = function(req, res) {
-  request.post({
+  var params = {
     url:'https://stanfordwho.stanford.edu/SWApp/Search.do',
     form: {search: req.query.query}
-  }, function (err, httpResponse, body) {
-    if (err) {
-      console.log("Could not reach servers at Stanford WHO");
+  };
+
+  request.post(params, function (err, httpResponse, body) {
+    if (err)
       return console.error('Request failed with error:', err);
-    }
     var $ = cheerio.load(body);
     var name = $('#PublicProfile h2').text().trim();
     res.end(name);
