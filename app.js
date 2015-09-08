@@ -21,6 +21,7 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var assets = require('connect-assets');
 
+
 /**
  * Controllers (route handlers).
  */
@@ -30,16 +31,19 @@ var userController = require('./controllers/user');
 var projectsController = require('./controllers/projects');
 var membersController = require('./controllers/members');
 
+
 /**
  * API keys and Passport configuration.
  */
 var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 
+
 /**
  * Create Express server.
  */
 var app = express();
+
 
 /**
  * Connect to MongoDB.
@@ -48,6 +52,7 @@ mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
 });
+
 
 /**
  * Express configuration.
@@ -90,31 +95,41 @@ app.use(function(req, res, next) {
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
+
 /**
- * Primary app routes: Index page.
+ * App Routes: Index page.
  */
 app.get('/', indexController.index);
 app.post('/emailtest', indexController.getemailtest);
 
+
 /**
- * Primary app routes: Homepage, and rest of application.
+ * App Routes: Home and Explore Pages
  */
 app.get('/home', homeController.index);
-app.get('/logout', userController.logout);
-
 app.get('/explore/members', membersController.getMembers);
 app.get('/explore/members/:memberID', membersController.getSoloMember);
-
 app.get('/explore/projects', projectsController.getProjects);
 app.get('/explore/projects/:projectID', projectsController.getSoloProject);
 
-app.get('/account/projects', passportConf.isAuthenticated, userController.getProjects);
-app.get('/account/projects/new', passportConf.isAuthenticated, userController.getNewProject);
-app.post('/account/projects/new', passportConf.isAuthenticated, userController.postNewProject);
 
+/**
+ * App Routes: Account Pages
+ */
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
+app.get('/logout', userController.logout);
+
+
+/**
+ * App Routes: Account Project Pages
+ */
+app.get('/account/projects', passportConf.isAuthenticated, userController.getProjects);
+app.get('/account/projects/new', passportConf.isAuthenticated, userController.getNewProject);
+app.post('/account/projects/new', passportConf.isAuthenticated, userController.postNewProject);
+app.get('/account/projects/:projectID', passportConf.isAuthenticated, userController.getSoloProject);
+
 
 /**
  * OAuth authentication routes. (Sign in with Github)
@@ -124,10 +139,12 @@ app.get('/auth/github/callback', passport.authenticate('github', { failureRedire
   res.redirect(req.session.returnTo || '/home');
 });
 
+
 /**
  * Error Handler.
  */
 app.use(errorHandler());
+
 
 /**
  * Start Express server.

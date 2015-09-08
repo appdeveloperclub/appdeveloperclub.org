@@ -26,6 +26,7 @@ exports.getProjects = function(req, res) {
         projectID: project._id
       });
     });
+
     res.render('projects/explore_projects', {
       title: 'Explore Projects',
       pageBackground: 'projects-background',
@@ -40,20 +41,38 @@ exports.getProjects = function(req, res) {
  * Getting information on a single project.
  */
 exports.getSoloProject = function(req, res) {
-  var userID = req.params.memberID;
-  User.findOne({'_id': userID}, function(err, user) {
-    var userFound = {
-      name: user.profile.name,
-      website: user.profile.website,
-      email: user.email,
-      propic: user.gravatar(),
-      tagline: user.profile.tagline,
-      specialties: user.profile.specialties,
-      blurb: user.profile.blurb
+  var projectID = req.params.projectID;
+  var teamMembersFound = [];
+
+  Project.findOne({'_id': projectID}, function(err, project) {
+    var projectFound = {
+      title: project.title,
+      date: project.date,
+      description: project.description,
+      platform: project.platform,
+      projectPic: project.projectpic,
+      teamMembers: project.teamMembers,
+      projectID: project._id
     };
-    res.render('members/solo_member', {
-      title: 'Explore Members',
-      pageBackground: 'general-background'
+
+    User.find({ '_id': {'$in': projectFound.teamMembers}}, function(err, teamMembers) {
+      teamMembers.forEach(function(teamMember) {
+        teamMembersFound.push({
+          name: teamMember.profile.name,
+          website: teamMember.profile.website,
+          propic: teamMember.gravatar(),
+          tagline: teamMember.profile.tagline,
+          specialties: teamMember.profile.specialties,
+          memberID: teamMember._id
+        });
+
+        res.render('projects/solo_project', {
+          title: 'Explore Projects',
+          pageBackground: 'projects-background',
+          projectFound: JSON.stringify(projectFound),
+          teamMembers: JSON.stringify(teamMembersFound)
+        });
+      });
     });
   });
 };

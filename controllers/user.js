@@ -69,9 +69,11 @@ exports.getProjects = function(req, res) {
         description: project.description,
         platform: project.platform,
         projectPic: project.projectpic,
-        teamMembers: project.teamMembers
+        teamMembers: project.teamMembers,
+        projectID: project._id
       });
     });
+
     res.render('account/projects', {
       title: 'Your Projects',
       pageBackground: 'general-background',
@@ -116,24 +118,70 @@ exports.postNewProject = function(req, res, next) {
   req.assert('platform', 'Must have a valid platform target').notEmpty();
   req.assert('description', 'Description must not be empty').notEmpty();
   var errors = req.validationErrors();
+
   if (errors) {
     req.flash('errors', errors);
     return res.redirect('/account/projects/new');
   }
+
   var project = new Project({
     title: req.body.title,
     platform: req.body.platform,
     description: req.body.description,
     teamMembers: [req.user._id]
   });
+
   Project.findOne({ title: req.body.title }, function(err, existingProject) {
     if (existingProject) {
       req.flash('errors', { msg: 'Project with that title already exists.' });
       return res.redirect('/account/projects/new');
     }
+
     project.save(function(err) {
       if (err) return next(err);
       res.redirect('/account/projects');
+    });
+  });
+};
+
+
+/**
+ * GET /account/projects/:projectID
+ * Displays a solo project for creator editing.
+ */
+exports.getSoloProject = function(req, res) {
+  var projectID = req.params.projectID;
+  var teamMembersFound = [];
+
+  Project.findOne({'_id': projectID}, function(err, project) {
+    var projectFound = {
+      title: project.title,
+      date: project.date,
+      description: project.description,
+      platform: project.platform,
+      projectPic: project.projectpic,
+      teamMembers: project.teamMembers,
+      projectID: project._id
+    };
+
+    User.find({ '_id': {'$in': projectFound.teamMembers}}, function(err, teamMembers) {
+      teamMembers.forEach(function(teamMember) {
+        teamMembersFound.push({
+          name: teamMember.profile.name,
+          website: teamMember.profile.website,
+          propic: teamMember.gravatar(),
+          tagline: teamMember.profile.tagline,
+          specialties: teamMember.profile.specialties,
+          memberID: teamMember._id
+        });
+
+        res.render('account/solo_project', {
+          title: 'Account Project',
+          pageBackground: 'projects-background',
+          projectFound: JSON.stringify(projectFound),
+          teamMembers: JSON.stringify(teamMembersFound)
+        });
+      });
     });
   });
 };

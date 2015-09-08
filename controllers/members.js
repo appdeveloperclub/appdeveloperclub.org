@@ -22,6 +22,7 @@ exports.getMembers = function(req, res) {
         memberID: user._id
       });
     });
+
     res.render('members/explore_members', {
       title: 'Explore Members',
       pageBackground: 'members-background',
