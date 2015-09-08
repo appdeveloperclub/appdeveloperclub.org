@@ -24,6 +24,7 @@ exports.getMembers = function(req, res) {
     });
     res.render('members/explore_members', {
       title: 'Explore Members',
+      pageBackground: 'members-background',
       members: JSON.stringify(members)
     });
   });
@@ -57,12 +58,14 @@ exports.getSoloMember = function(req, res) {
           description: project.description,
           platform: project.platform,
           projectPic: project.projectpic,
-          teamMembers: project.teamMembers
+          teamMembers: project.teamMembers,
+          projectID: project._id
         });
       });
 
       res.render('members/solo_member', {
         title: 'Explore Members',
+        pageBackground: 'members-background',
         userFound: JSON.stringify(userFound),
         projects: JSON.stringify(projectsFound)
       });

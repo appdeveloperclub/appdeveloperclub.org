@@ -42,4 +42,6 @@ $(document).ready(function() {
     $('.index-alert-success .index-carousel-alert-text').text('Stanford email successfully saved!');
     $('.index-alert-success').show()
   });
+
+  $('dropdown-toggle').dropdown()
 });

@@ -8,6 +8,11 @@ html
     title #{title} - App Developer Club
     != css('main')
 
-  block content
+  body(class=pageBackground)
+    include partials/header
+
+    .container
+      include partials/flash
+      block content
 
     != js('application')

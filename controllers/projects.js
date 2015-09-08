@@ -7,6 +7,7 @@ var User = require('../models/User');
 var Project = require('../models/Project')
 var secrets = require('../config/secrets');
 
+
 /**
  * GET /
  * Home page.
@@ -21,15 +22,18 @@ exports.getProjects = function(req, res) {
         description: project.description,
         platform: project.platform,
         projectPic: project.projectpic,
-        teamMembers: project.teamMembers
+        teamMembers: project.teamMembers,
+        projectID: project._id
       });
     });
     res.render('projects/explore_projects', {
       title: 'Explore Projects',
+      pageBackground: 'projects-background',
       projects: JSON.stringify(projectsFound)
     });
   });
 };
+
 
 /**
  * GET /explore/projects/:projectID
@@ -49,6 +53,7 @@ exports.getSoloProject = function(req, res) {
     };
     res.render('members/solo_member', {
       title: 'Explore Members',
+      pageBackground: 'general-background'
     });
   });
 };
