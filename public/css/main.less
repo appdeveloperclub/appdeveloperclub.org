@@ -14,6 +14,31 @@
 @import url(http://fonts.googleapis.com/css?family=Nunito:300);
 @import url(http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
 
+/*************/
+/* Animation */
+/*************/
+
+@-webkit-keyframes typing {
+    from { width: 0 }
+    to { width:100% }
+}
+
+@-moz-keyframes typing {
+    from { width: 0 }
+    to { width:100% }
+}
+
+@-webkit-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
+@-moz-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
+
 /***************/
 /* Scaffolding */
 /***************/
@@ -25,7 +50,7 @@ html {
 
 body {
   padding-top: 60px;
-  margin-bottom: 75px;
+  margin-bottom: 10px;
 }
 
 footer {
@@ -51,10 +76,25 @@ footer {
 
 .navbar-default {
   background: transparent;
+  padding-top: 10px;
+  border-bottom: 0px solid;
+  margin: auto;
+  width: 60%;
+
+  -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, .1);
+          box-shadow: 0 1px 0px rgba(0, 0, 0, .1);
 }
 
 .navbar-inner {
   background: transparent;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #bb335b;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #bb335b;
 }
 
 .navbar-nav ul.dropdown-menu {
@@ -107,22 +147,61 @@ body > .container {
 .homepage-background {
   height: 100%;
   width: 100%;
-  background: #000 url(../img/home_background.png)  no-repeat center center fixed;
+  background: #FFF url(../img/home_background.png)  no-repeat center -150px fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
 }
 
 .homepage-logo {
-  background-image: url(../img/adclogo.png);
   position: relative;
   margin: 0 auto;
-  height: 100px;
   width: auto;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
-  margin-bottom: 20px;
+  background-position: center;
+  margin-bottom: 100px;
+  margin-top: 130px;
+
+  p {
+    font-size: 70px;
+    color: #777777;
+    margin: auto;
+
+    .colored {
+      color: #bb335b; /* The red part of the logo */
+    }
+  }
+
+  white-space:nowrap;
+  overflow:hidden;
+  border-right: .1em solid #777777;
+  -webkit-animation: typing 2s steps(26, end), /* # of steps = # of characters */
+  blink-caret 1s step-end infinite;
+  -moz-animation: typing 2s steps(26, end), /* # of steps = # of characters */
+  blink-caret 1s step-end infinite;
+}
+
+.home-icon {
+  height: 40px;
+}
+
+.desc {
+  height: 90px;
+}
+
+.btn-default {
+  color: #bb335b;
+  border: #bb335b 1px solid;
+  border-radius: 20px;
+  height: 28px;
+  width: 150px;
+  padding-top: 5px;
+  background-color: transparent;
+}
+
+.btn-default:hover {
+  background-color: #bb335b;
 }
 
 /***********************/
