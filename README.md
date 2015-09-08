@@ -52,8 +52,8 @@ Get started by first cloning the repository:
 
 ```bash
 # Get the latest version:
-$ git clone https://github.com/danXyu/ADC_Website.git
-$ cd ADC_Website
+$ git clone https://github.com/appdeveloperclub/appdeveloperclub.com.git
+$ cd appdeveloperclub.com
 
 # In a separate terminal window, run:
 $ mongod
@@ -85,6 +85,9 @@ Changelog
 - Finished styling for ADC site, working on responsivity.
 - Added smart email parsing to verify Stanford identities.
 
+### 0.2.0 (August 25, 2015)
+- Working on homepage for logged-in ADC members.
+- Finished homepage, responsivity added and working for all devices.
 
 Contributing
 ------------

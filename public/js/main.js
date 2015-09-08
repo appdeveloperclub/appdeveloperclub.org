@@ -16,28 +16,30 @@ $(document).ready(function() {
   });
 
   $('.index-regis-btn').click(function() {
-    var emailToTry = $('input.index-field').val();
-    var request = new XMLHttpRequest();
-    var params = "query=" + emailToTry;
-    request.open('POST', '/emailtest?' + params, true);
-    request.onreadystatechange = function() {
-      if (this.readyState == 4) {
-        if (this.status == 200) {
-          if (this.responseText !== '') {
-            $('.index-alert-success .index-carousel-alert-text').text('Hi, ' + this.responseText);
-            $('.index-alert-success').show()
-            $('.index-alert-failure').hide()
-          } else {
-            $('.index-alert-failure').show()
-            $('.index-alert-success').hide()
-          }
-        } else {
-          $('.index-alert-failure').show()
-          $('.index-alert-success').hide()
-          return;
-        }
-      }
-    }
-    request.send();
+    // var emailToTry = $('input.index-field').val();
+    // var request = new XMLHttpRequest();
+    // var params = "query=" + emailToTry;
+    // request.open('POST', '/emailtest?' + params, true);
+    // request.onreadystatechange = function() {
+    //   if (this.readyState == 4) {
+    //     if (this.status == 200) {
+    //       if (this.responseText !== '') {
+    //         $('.index-alert-success .index-carousel-alert-text').text('Hi, ' + this.responseText);
+    //         $('.index-alert-success').show()
+    //         $('.index-alert-failure').hide()
+    //       } else {
+    //         $('.index-alert-failure').show()
+    //         $('.index-alert-success').hide()
+    //       }
+    //     } else {
+    //       $('.index-alert-failure').show()
+    //       $('.index-alert-success').hide()
+    //       return;
+    //     }
+    //   }
+    // }
+    // request.send();
+    $('.index-alert-success .index-carousel-alert-text').text('Stanford email successfully saved!');
+    $('.index-alert-success').show()
   });
 });
