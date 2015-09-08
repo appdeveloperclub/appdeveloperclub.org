@@ -47,6 +47,10 @@ body {
   margin-bottom: 10px;
 }
 
+body > .container {
+  text-align: center;
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -63,11 +67,18 @@ footer {
 /* Navbar Styles */
 /*****************/
 
-.navbar-nav img {
-  width: 30px;
-  height: 30px;
-  margin: -15px 15px -15px;
+.navbar-nav {
+  img {
+    width: 30px;
+    height: 30px;
+    margin: -15px 15px -15px;
+  }
+
+  ul.dropdown-menu {
+    background: transparent;
+  }
 }
+
 
 .navbar-default {
   background: transparent;
@@ -102,10 +113,6 @@ footer {
   border-radius: 99em;
   border: 1px solid #eee;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
-}
-
-body > .container {
-  text-align: center;
 }
 
 
@@ -311,7 +318,8 @@ body > .container {
   overflow: hidden;
   background-color: #eeeeee;
   padding: 15px 25px;
-  width: 220px;
+  width: 200px;
+  height: 240px;
   margin: 20px 20px;
   border: 1px solid #bb335b;
 
