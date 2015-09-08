@@ -8,14 +8,14 @@
           span.icon-bar
           span.icon-bar
         a.navbar-brand(href='/home')
-          i.fa.fa-code
-          | App Developer Club
+          //- i.fa.fa-code
+          | &lt/App Developer Club&gt
       .collapse.navbar-collapse
         ul.nav.navbar-nav
           li(class=title=='Explore Projects'?'active':undefined)
-            a(href='/explore/projects') Explore Projects
+            a(href='/explore/projects') Projects
           li(class=title=='Explore Members'?'active':undefined)
-            a(href='/explore/members') Explore Members
+            a(href='/explore/members') Members
         ul.nav.navbar-nav.navbar-right
           if user
             li.dropdown(class=title=='Account Management'?'active':undefined)
