@@ -51,6 +51,10 @@ body > .container {
   text-align: center;
 }
 
+.container {
+  position: relative;
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -75,10 +79,9 @@ footer {
   }
 
   ul.dropdown-menu {
-    background: transparent;
+    background: #ebebea;
   }
 }
-
 
 .navbar-default {
   background: transparent;
@@ -224,6 +227,7 @@ footer {
   background-color: #bb335b;
 }
 
+
 /***********************/
 /* Members Page Styles */
 /***********************/
@@ -235,11 +239,20 @@ footer {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+  overflow: hidden;
+}
+
+.members-container {
+  margin: 0px auto;
+  background-color: transparent;
+  width: 100%;
 }
 
 .members {
   margin: 0 auto;
-  margin-top: 20px;
+  width: 100%;
+  height: 600px;
+  overflow: auto;
 }
 
 .member {
@@ -247,7 +260,6 @@ footer {
   overflow: hidden;
   background-color: #eeeeee;
   padding-top: 15px;
-  padding-bottom: 15px;
   width: 200px;
   margin: 20px 20px;
   border: 1px solid #bb335b;
@@ -283,16 +295,21 @@ footer {
   }
 }
 
+.solo-member-name {
+  font-size: 50px;
+  color: #777;
+}
+
 .solo-member {
   font-size: 16px;
-}
 
-.solo-member-fields-labels {
-  text-align: right;
-}
+  .solo-member-fields-labels {
+    text-align: right;
+  }
 
-.solo-member-fields-filled {
-  text-align: left;
+  .solo-member-fields-filled {
+    text-align: left;
+  }
 }
 
 
@@ -307,10 +324,20 @@ footer {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+  overflow: hidden;
+}
+
+.projects-container {
+  margin: 0px auto;
+  background-color: transparent;
+  width: 100%;
 }
 
 .projects {
-  margin-top: 20px;
+  margin: 0 auto;
+  width: 100%;
+  height: 600px;
+  overflow: auto;
 }
 
 .project {
@@ -342,11 +369,20 @@ footer {
     filter: alpha(opacity=1);
   }
 
-
-
   .project-tagline {
     margin-top: 12px;
   }
+}
+
+.solo-project-title {
+  font-size: 50px;
+  color: #777;
+}
+
+.solo-project {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
 }
 
 

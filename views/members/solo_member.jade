@@ -6,7 +6,7 @@ block content
 
   .row
     .page-header
-      h3 #{parsedUser.name}
+      h3.solo-member-name #{parsedUser.name}
 
   .row.solo-member
     .col-sm-4.col-md-4
@@ -20,7 +20,7 @@ block content
     .col-sm-2.col-md-6.solo-member-fields-filled
       p #{parsedUser.tagline}
       p #{parsedUser.email}
-      p #{parsedUser.website}
+      a(href=parsedUser.website) #{parsedUser.website}
       p #{parsedUser.specialties}
       p #{parsedUser.blurb}
 

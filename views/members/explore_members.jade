@@ -1,14 +1,15 @@
 extends ../layout
 
 block content
-  .members
-    - var parsedMembers = JSON.parse(members);
-    each member in parsedMembers
-      .col-sm-4
-        .member
-          a(href='/explore/members/' + member.memberID)
+  .members-container
+    .members
+      - var parsedMembers = JSON.parse(members);
+      each member in parsedMembers
+        .col-sm-4
+          .member
+            a(href='/explore/members/' + member.memberID)
 
-          .row
-            p.member-name #{member.name}
-            img(src="#{member.propic}", class='profile', width='100', height='100')
-            p.member-tagline #{member.tagline}
+            .row
+              p.member-name #{member.name}
+              img(src="#{member.propic}", class='profile', width='120', height='120')
+              p.member-tagline #{member.tagline}

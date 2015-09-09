@@ -1,13 +1,14 @@
 extends ../layout
 
 block content
-  .projects
-    - var parsedProjects = JSON.parse(projects);
-    each project in parsedProjects
-      .col-sm-4
-        .project
-          a(href='/explore/projects/' + project.projectID)
+  .projects-container
+    .projects
+      - var parsedProjects = JSON.parse(projects);
+      each project in parsedProjects
+        .col-sm-4
+          .project
+            a(href='/explore/projects/' + project.projectID)
 
-          .row
-            p.project-name #{project.title}
-            p.project-tagline #{project.description}
+            .row
+              p.project-name #{project.title}
+              p.project-tagline #{project.description}

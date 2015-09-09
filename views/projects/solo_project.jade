@@ -6,18 +6,11 @@ block content
 
   .row
     .page-header
-      h3 #{parsedProject.title}
+      h3.solo-project-title #{parsedProject.title}
 
-  .row.solo-member
-    .col-sm-2.col-md-2.solo-member-fields-labels
-      p Tagline:
-      p Email:
-      p Website:
-      p Expertise:
-      p Description:
-    .col-sm-2.col-md-6.solo-member-fields-filled
-      p #{parsedProject.platform}
+  .row.solo-project
       p #{parsedProject.description}
+      a.btn.btn-default(href='/explore/members', role='button') Visit Website »
 
   .row
     .page-header
