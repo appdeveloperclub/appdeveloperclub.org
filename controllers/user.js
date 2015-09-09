@@ -116,6 +116,7 @@ exports.getNewProject = function(req, res) {
 exports.postNewProject = function(req, res, next) {
   req.assert('title', 'Must have a valid title').notEmpty();
   req.assert('platform', 'Must have a valid platform target').notEmpty();
+  req.assert('website', 'Must have a valid website').notEmpty();
   req.assert('description', 'Description must not be empty').notEmpty();
   var errors = req.validationErrors();
 
@@ -127,6 +128,7 @@ exports.postNewProject = function(req, res, next) {
   var project = new Project({
     title: req.body.title,
     platform: req.body.platform,
+    website: req.body.website,
     description: req.body.description,
     teamMembers: [req.user._id]
   });
@@ -159,6 +161,7 @@ exports.getSoloProject = function(req, res) {
       date: project.date,
       description: project.description,
       platform: project.platform,
+      website: project.website,
       projectPic: project.projectpic,
       teamMembers: project.teamMembers,
       projectID: project._id

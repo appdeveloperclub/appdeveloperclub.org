@@ -5,6 +5,7 @@ var ProjectSchema = new mongoose.Schema({
   date : {type: Date, default: new Date() },
   description : {type: String, default: '' },
   platform: {type: String, default: ''},
+  website: {type: String, default: ''},
   teamMembers: [String]
 });
 

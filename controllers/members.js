@@ -5,6 +5,7 @@ var User = require('../models/User');
 var Project = require('../models/Project');
 var secrets = require('../config/secrets');
 
+
 /**
  * GET /explore/members
  * Exploring members.
@@ -30,6 +31,7 @@ exports.getMembers = function(req, res) {
     });
   });
 };
+
 
 /**
  * GET /explore/members/:memberID
@@ -65,7 +67,7 @@ exports.getSoloMember = function(req, res) {
       });
 
       res.render('members/solo_member', {
-        title: 'Explore Members',
+        title: 'Explore Solo Member',
         pageBackground: 'members-background',
         userFound: JSON.stringify(userFound),
         projects: JSON.stringify(projectsFound)

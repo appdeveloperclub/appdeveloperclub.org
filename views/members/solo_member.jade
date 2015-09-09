@@ -4,36 +4,37 @@ block content
   - var parsedUser = JSON.parse(userFound);
   - var parsedProjects = JSON.parse(projects);
 
-  .row
-    .page-header
-      h3 #{parsedUser.name}
+  .members-container
+    .members
+      .row
+        .page-header
+          h3.solo-member-name #{parsedUser.name}
 
-  .row.solo-member
-    .col-sm-4.col-md-4
-      img.profile_pic(src="#{parsedUser.propic}", class='profile', width='200', height='200')
-    .col-sm-2.col-md-2.solo-member-fields-labels
-      p Tagline:
-      p Email:
-      p Website:
-      p Expertise:
-      p Description:
-    .col-sm-2.col-md-6.solo-member-fields-filled
-      p #{parsedUser.tagline}
-      p #{parsedUser.email}
-      p #{parsedUser.website}
-      p #{parsedUser.specialties}
-      p #{parsedUser.blurb}
+      .row.solo-member
+        .col-sm-4.col-md-4
+          img.profile_pic(src="#{parsedUser.propic}", class='profile', width='200', height='200')
+        .col-sm-2.col-md-2.solo-member-fields-labels
+          p Tagline:
+          p Email:
+          p Website:
+          p Expertise:
+          p Description:
+        .col-sm-2.col-md-6.solo-member-fields-filled
+          p #{parsedUser.tagline}
+          p #{parsedUser.email}
+          a(href=parsedUser.website) #{parsedUser.website}
+          p #{parsedUser.specialties}
+          p #{parsedUser.blurb}
 
-  .row
-    .page-header
-      h3 #{parsedUser.name}'s Projects
+      .row
+        .page-header
+          h3 #{parsedUser.name}'s Projects
 
-  .row
-    each project in parsedProjects
-      .col-sm-4
-        .project
-          a(href='/explore/projects/' + project.projectID)
-          .row
-            p.project-name #{project.title}
-            p.project-tagline #{project.description}
-
+      .row
+        each project in parsedProjects
+          .col-sm-4
+            .project
+              a(href='/explore/projects/' + project.projectID)
+              .row
+                p.project-name #{project.title}
+                p.project-tagline #{project.description}
