@@ -161,6 +161,7 @@ exports.getSoloProject = function(req, res) {
       date: project.date,
       description: project.description,
       platform: project.platform,
+      website: project.website,
       projectPic: project.projectpic,
       teamMembers: project.teamMembers,
       projectID: project._id

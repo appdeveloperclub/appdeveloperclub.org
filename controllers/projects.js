@@ -21,7 +21,7 @@ exports.getProjects = function(req, res) {
         date: project.date,
         description: project.description,
         platform: project.platform,
-        projectPic: project.projectpic,
+        website: project.website,
         teamMembers: project.teamMembers,
         projectID: project._id
       });
@@ -50,7 +50,7 @@ exports.getSoloProject = function(req, res) {
       date: project.date,
       description: project.description,
       platform: project.platform,
-      projectPic: project.projectpic,
+      website: project.website,
       teamMembers: project.teamMembers,
       projectID: project._id
     };

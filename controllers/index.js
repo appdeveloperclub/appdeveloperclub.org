@@ -1,6 +1,7 @@
 var request = require('request');
 var cheerio = require('cheerio');
 
+
 /**
  * GET /
  * Home page.
@@ -12,6 +13,7 @@ exports.index = function(req, res) {
     title: 'Index'
   });
 };
+
 
 /**
  * POST /

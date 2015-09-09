@@ -4,32 +4,52 @@ block content
   - var parsedProject = JSON.parse(projectFound);
   - var parsedTeamMembers = JSON.parse(teamMembers);
 
-  .row
-    .page-header
-      h3 #{parsedProject.title}
+  .projects-container
+    .projects
+      .row
+        .page-header
+          h3.solo-project-title #{parsedProject.title}
 
-  .row.solo-member
-    .col-sm-2.col-md-2.solo-member-fields-labels
-      p Tagline:
-      p Email:
-      p Website:
-      p Expertise:
-      p Description:
-    .col-sm-2.col-md-6.solo-member-fields-filled
-      p #{parsedProject.platform}
-      p #{parsedProject.description}
+      form.form-horizontal(role='form', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+          label(class='col-sm-2 control-label', for='platform') Platform Target
+          .col-sm-8
+            input.form-control(type='text', name='platform', id='platform', value='#{parsedProject.platform}')
+        .form-group
+          label(class='col-sm-2 control-label', for='website') Website
+          .col-sm-8
+            input.form-control(type='text', name='website', id='website', value='#{parsedProject.website}')
+        .form-group
+          label(class='col-sm-2 control-label', for='description') Project Description
+          .col-sm-8
+            textarea.form-control(type='text', name='description', id='description', rows='5')
+              | #{parsedProject.description}
+        .form-group
+          .col-sm-offset-2.col-sm-8
+            button.btn.btn-primary(type='submit')
+              i.fa.fa-code
+              | Update Project
 
-  .row
-    .page-header
-      h3 #{parsedProject.title}'s Creators
+      .row
+        .page-header
+          h3 #{parsedProject.title}'s Creators
 
-  .row
-    each teamMember in parsedTeamMembers
-      .col-sm-4
-        .member
-          a(href='/explore/members/' + teamMember.memberID)
-          .row
-            p.member-name #{teamMember.name}
-            img(src="#{teamMember.propic}", class='profile', width='100', height='100')
-            p.member-tagline #{teamMember.tagline}
+      .row
+        each teamMember in parsedTeamMembers
+          .col-sm-4
+            .member
+              a(href='/explore/members/' + teamMember.memberID)
+              .row
+                p.member-name #{teamMember.name}
+                img(src="#{teamMember.propic}", class='profile', width='100', height='100')
+                p.member-tagline #{teamMember.tagline}
+        .col-sm-4
+          .member
+            .row
+              p.member-name Add Creator
+              input.form-control.new-member-input(type='text', name='creator', id='creator')
+              button.btn.btn-primary.new-member-button
+                i.fa.fa-chain-broken
+                | Add Creator
 

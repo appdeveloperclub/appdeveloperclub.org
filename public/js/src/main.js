@@ -8,6 +8,8 @@ $(document).ready(function() {
       $('.members').height($(this).height() - 60);
     if ($('.projects').length)
       $('.projects').height($(this).height() - 60);
+    // if ($('.profile').length)
+    //   $('.profile').height($(this).height() - 60);
   });
 
 
@@ -60,7 +62,6 @@ $(document).ready(function() {
       }
     }
     request.send();
-    $('.index-alert-success .index-carousel-alert-text').text('Stanford email successfully saved!');
     $('.index-alert-success').show()
   });
 
@@ -68,8 +69,8 @@ $(document).ready(function() {
   /**
    * Parent container font resizing.
    */
-  $('.member-name').fitText();
-  $('.project-name').fitText();
+  $('.member-name').quickfit({ max: 35, min: 18, truncate: false });
+  $('.project-name').quickfit({ max: 35, min: 18, truncate: false });
 
 
   /**
@@ -80,5 +81,13 @@ $(document).ready(function() {
       $('.members').height($(this).height() - 60);
     if ($('.projects').length)
       $('.projects').height($(this).height() - 60);
+  });
+
+
+  /**
+   * Adding creator button handler.
+   */
+  $('.new-member-button').click(function() {
+    var creatorName = $('.new-member-input').val();
   });
 });

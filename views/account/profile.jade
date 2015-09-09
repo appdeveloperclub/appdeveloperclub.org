@@ -1,61 +1,63 @@
 extends ../layout
 
 block content
-  .row
-    .page-header
-      h3 Profile Information
+  .profile-container
+    .profile
+      .row
+        .page-header
+          h3 Profile Information
 
-    form.form-horizontal(action='/account/profile', method='POST')
-      .col-sm-6
+        form.form-horizontal(action='/account/profile', method='POST')
+          .col-sm-6
+            input(type='hidden', name='_csrf', value=_csrf)
+            .form-group
+              label.col-sm-2.control-label(for='email') Email
+              .col-sm-10
+                input.form-control(type='email', name='email', id='email', value='#{user.email}')
+            .form-group
+              label.col-sm-2.control-label(for='name') Name
+              .col-sm-10
+                input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+            .form-group
+              label.col-sm-2.control-label(for='location') Location
+              .col-sm-10
+                input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+            .form-group
+              label.col-sm-2.control-label(for='website') Website
+              .col-sm-10
+                input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
+            .form-group
+              label.col-sm-2.control-label(for='gravatar') Gravatar
+              .col-sm-10
+                img.gravatar(src="#{user.gravatar()}", class='profile', width='100', height='100')
+
+          .col-sm-6
+            .form-group
+              label.col-sm-2.control-label(for='tagline') Tagline
+              .col-sm-10
+                input.form-control(type='tagline', name='tagline', id='tagline', value='#{user.profile.tagline}')
+            .form-group
+              label.col-sm-2.control-label(for='specialties') Specialties
+              .col-sm-10
+                input.form-control(type='text', name='specialties', id='specialties', value='#{user.profile.specialties}')
+            .form-group
+              label.col-sm-2.control-label(for='blurb') Description
+              .col-sm-10
+                textarea.form-control(type='text', rows="11", name='blurb', id='blurb')
+                  | #{user.profile.blurb}
+
+          .form-group
+            .col-sm-offset-4.col-sm-4
+              button.btn.btn.btn-primary(type='submit')
+                i.fa.fa-pencil
+                | Update Profile
+
+      .page-header
+        h3 Delete Account
+
+      p You can delete your account, but keep in mind this action is irreversible.
+      form(action='/account/delete', method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
-        .form-group
-          label.col-sm-2.control-label(for='email') Email
-          .col-sm-10
-            input.form-control(type='email', name='email', id='email', value='#{user.email}')
-        .form-group
-          label.col-sm-2.control-label(for='name') Name
-          .col-sm-10
-            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-        .form-group
-          label.col-sm-2.control-label(for='location') Location
-          .col-sm-10
-            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-        .form-group
-          label.col-sm-2.control-label(for='website') Website
-          .col-sm-10
-            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-        .form-group
-          label.col-sm-2.control-label(for='gravatar') Gravatar
-          .col-sm-10
-            img.gravatar(src="#{user.gravatar()}", class='profile', width='100', height='100')
-
-      .col-sm-6
-        .form-group
-          label.col-sm-2.control-label(for='tagline') Tagline
-          .col-sm-10
-            input.form-control(type='tagline', name='tagline', id='tagline', value='#{user.profile.tagline}')
-        .form-group
-          label.col-sm-2.control-label(for='specialties') Specialties
-          .col-sm-10
-            input.form-control(type='text', name='specialties', id='specialties', value='#{user.profile.specialties}')
-        .form-group
-          label.col-sm-2.control-label(for='blurb') Description
-          .col-sm-10
-            textarea.form-control(type='text', rows="11", name='blurb', id='blurb')
-              | #{user.profile.blurb}
-
-      .form-group
-        .col-sm-offset-4.col-sm-4
-          button.btn.btn.btn-primary(type='submit')
-            i.fa.fa-pencil
-            | Update Profile
-
-  .page-header
-    h3 Delete Account
-
-  p You can delete your account, but keep in mind this action is irreversible.
-  form(action='/account/delete', method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    button.btn.btn-danger(type='submit')
-      i.fa.fa-trash
-      | Delete my account
+        button.btn.btn-danger(type='submit')
+          i.fa.fa-trash
+          | Delete my account

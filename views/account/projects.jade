@@ -1,23 +1,26 @@
 extends ../layout
 
 block content
-  .row
-    .col-sm-8
-      .page-header
-        h3.account-projects.header Your Projects
-    .col-sm-4
-      .page-header
-        a.btn.btn-primary.btn-sm(href='/account/projects/new')
-          i.fa.fa-rocket
-          | Create New Project
+  - var parsedProjects = JSON.parse(projects);
 
-  .row
+
+  .projects-container
     .projects
-      - var parsedProjects = JSON.parse(projects);
-      each project in parsedProjects
+      .row
+        .col-sm-8
+          .page-header
+            h3.account-projects.header Your Projects
         .col-sm-4
-          .project
-            a(href='/account/projects/' + project.projectID)
-            .row
-              p.project-name #{project.title}
-              p.project-tagline #{project.description}
+          .page-header
+            a.btn.btn-primary.btn-sm(href='/account/projects/new')
+              i.fa.fa-rocket
+              | Create New Project
+
+      .row
+        each project in parsedProjects
+          .col-sm-4
+            .project
+              a(href='/account/projects/' + project.projectID)
+              .row
+                p.project-name #{project.title}
+                p.project-tagline #{project.description}
