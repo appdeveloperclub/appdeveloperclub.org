@@ -8,6 +8,10 @@ $(document).ready(function() {
       $('.members').height($(this).height() - 60);
     if ($('.projects').length)
       $('.projects').height($(this).height() - 60);
+    if ($('.core-members').length)
+      $('.core-members').height($(this).height() - 60);
+    if ($('.advisors').length)
+      $('.advisors').height($(this).height() - 60);
     // if ($('.profile').length)
     //   $('.profile').height($(this).height() - 60);
   });
@@ -71,6 +75,8 @@ $(document).ready(function() {
    */
   $('.member-name').quickfit({ max: 35, min: 18, truncate: false });
   $('.project-name').quickfit({ max: 35, min: 18, truncate: false });
+  $('.core-member-name').quickfit({ max: 35, min: 18, truncate: false });
+  $('.advisor-name').quickfit({ max: 35, min: 18, truncate: false });
 
 
   /**
@@ -81,6 +87,10 @@ $(document).ready(function() {
       $('.members').height($(this).height() - 60);
     if ($('.projects').length)
       $('.projects').height($(this).height() - 60);
+    if ($('.core-members').length)
+      $('.core-members').height($(this).height() - 60);
+    if ($('.advisors').length)
+      $('.advisors').height($(this).height() - 60);
   });
 
 

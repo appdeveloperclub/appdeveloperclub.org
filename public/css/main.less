@@ -14,12 +14,12 @@
 
 @-webkit-keyframes typing {
     from { width: 0 }
-    to { width:100% }
+    to { width: 730px }
 }
 
 @-moz-keyframes typing {
     from { width: 0 }
-    to { width:100% }
+    to { width: 730px }
 }
 
 @-webkit-keyframes blink-caret {
@@ -47,11 +47,11 @@ body {
   margin-bottom: 10px;
 }
 
-body > .container {
+body > .container-fluid {
   text-align: center;
 }
 
-.container {
+.container-fluid {
   position: relative;
 }
 
@@ -88,7 +88,7 @@ footer {
   padding-top: 10px;
   border-bottom: 0px solid;
   margin: auto;
-  width: 60%;
+  width: 100%;
 
   -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, .1);
           box-shadow: 0 1px 0px rgba(0, 0, 0, .1);
@@ -180,12 +180,19 @@ footer {
 .homepage-logo {
   position: relative;
   margin: 0 auto;
-  width: auto;
+  width: 730px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 100px;
   margin-top: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .1em solid #777777;
+  -webkit-animation: typing 2s steps(26, end), /* # of steps = # of characters */
+  blink-caret 1s step-end infinite;
+  -moz-animation: typing 2s steps(26, end), /* # of steps = # of characters */
+  blink-caret 1s step-end infinite;
 
   p {
     font-size: 70px;
@@ -196,14 +203,11 @@ footer {
       color: #bb335b; /* The red part of the logo */
     }
   }
+}
 
-  white-space:nowrap;
-  overflow:hidden;
-  border-right: .1em solid #777777;
-  -webkit-animation: typing 2s steps(26, end), /* # of steps = # of characters */
-  blink-caret 1s step-end infinite;
-  -moz-animation: typing 2s steps(26, end), /* # of steps = # of characters */
-  blink-caret 1s step-end infinite;
+.home-item {
+  text-align: center;
+  padding: 0 50px;
 }
 
 .home-icon {
@@ -322,6 +326,105 @@ footer {
 
 .new-member-button {
   margin-top: 20px;
+}
+
+
+/*************************/
+/* Core Team Page Styles */
+/*************************/
+
+.core-members-container {
+  margin: 0px auto;
+  background-color: transparent;
+  width: 100%;
+}
+
+.core-members {
+  margin: 0 auto;
+  width: 100%;
+  height: 600px;
+  overflow: auto;
+}
+
+.core-member {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: #eeeeee;
+  padding-top: 15px;
+  width: 200px;
+  height: 235px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px 20px;
+  border: 1px solid #bb335b;
+
+  .core-member-name {
+    font-size: 28px;
+    line-height: 35px;
+    color: #777;
+  }
+
+  img {
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    border-radius: 99em;
+    border: 1px solid #eee;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .core-member-tagline {
+    margin-top: 12px;
+  }
+}
+
+
+/************************/
+/* Advisors Page Styles */
+/************************/
+
+.advisors-container {
+  margin: 0px auto;
+  background-color: transparent;
+  width: 100%;
+}
+
+.advisors {
+  margin: 0 auto;
+  width: 100%;
+  height: 600px;
+  overflow: auto;
+}
+
+.advisor {
+  position: relative;
+  overflow: hidden;
+  background-color: #eeeeee;
+  padding-top: 15px;
+  width: 200px;
+  height: 285px;
+  margin: 20px 20px;
+  padding: 20px 20px;
+  border: 1px solid #bb335b;
+
+  .advisor-name {
+    font-size: 28px;
+    line-height: 35px;
+    color: #777;
+  }
+
+  img {
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    border-radius: 99em;
+    border: 1px solid #eee;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .advisor-tagline {
+    margin-top: 12px;
+  }
 }
 
 
