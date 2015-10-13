@@ -100,7 +100,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * App Routes: Index page.
  */
 app.get('/', homeController.index);
-app.post('/', indexController.getemailtest);
+app.post('/emailtest', indexController.getemailtest);
 app.get('/explore/core', homeController.getCore);
 app.get('/explore/advisors', homeController.getAdvisors);
 

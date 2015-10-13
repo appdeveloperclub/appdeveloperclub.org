@@ -5,6 +5,7 @@
 @import "vendor/bootstrap/bootstrap";
 @import "vendor/font-awesome/font-awesome";
 @import "vendor/bootstrap-social";
+@import "vendor/alertify-core.css";
 @import "themes/modern";
 
 
@@ -118,6 +119,38 @@ footer {
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
 }
 
+.nav-authentication {
+  margin-top: 10px;
+  margin-right: 10px;
+
+  .nav-field {
+    width: 200px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    margin-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+  }
+}
+
+.nav-registration {
+  display: none;
+  margin-top: 10px;
+  margin-right: 10px;
+
+  .btn-primary {
+    font-size: 14px;
+    margin-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+
+    &:hover {
+      background-color: #8e3057;
+    }
+  }
+}
 
 /*****************/
 /* Alert Styles */
@@ -267,7 +300,9 @@ footer {
   padding-top: 15px;
   width: 200px;
   height: 235px;
-  margin: 20px 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 20px 20px;
   border: 1px solid #bb335b;
 
@@ -346,6 +381,17 @@ footer {
   overflow: auto;
 }
 
+.core-title {
+  font-size: 30px;
+}
+
+.core-subtitle {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  font-size: 22px;
+}
+
 .core-member {
   position: relative;
   display: block;
@@ -353,7 +399,7 @@ footer {
   background-color: #eeeeee;
   padding-top: 15px;
   width: 200px;
-  height: 235px;
+  height: 245px;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -377,6 +423,63 @@ footer {
   .core-member-tagline {
     margin-top: 12px;
   }
+
+  .core-contact-info {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .core-contact-item {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin: 0 5px;
+    border-radius: 50%;
+    line-height: 30px;
+    color: white;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    i {
+      padding-left: 6px;
+      padding-top: 8px;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+
+    .facebook {
+    background: #3b5998;
+
+    &:hover {
+      background: #2d4373;
+    }
+  }
+
+  .twitter {
+    background: #55acee;
+
+    &:hover {
+      background: #2795e9;
+    }
+  }
+
+  .linkedin {
+    background: #007bb5;
+
+    &:hover {
+      background: #125688;
+    }
+  }
+}
+
+.core-member.core-point {
+  border: 2px solid #c4b836;
 }
 
 
@@ -397,13 +500,25 @@ footer {
   overflow: auto;
 }
 
+.advisors-title {
+  font-size: 40px;
+  font-color: #eee;
+}
+
+.advisors-subtitle {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  font-size: 22px;
+}
+
 .advisor {
   position: relative;
   overflow: hidden;
   background-color: #eeeeee;
   padding-top: 15px;
   width: 200px;
-  height: 285px;
+  height: 330px;
   margin: 20px 20px;
   padding: 20px 20px;
   border: 1px solid #bb335b;
@@ -424,6 +539,58 @@ footer {
 
   .advisor-tagline {
     margin-top: 12px;
+  }
+
+  .advisor-contact-info {
+    text-align: center;
+  }
+
+  .advisor-contact-item {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin: 0 5px;
+    border-radius: 50%;
+    line-height: 30px;
+    color: white;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    i {
+      padding-left: 6px;
+      padding-top: 8px;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .facebook {
+    background: #3b5998;
+
+    &:hover {
+      background: #2d4373;
+    }
+  }
+
+  .twitter {
+    background: #55acee;
+
+    &:hover {
+      background: #2795e9;
+    }
+  }
+
+  .linkedin {
+    background: #007bb5;
+
+    &:hover {
+      background: #125688;
+    }
   }
 }
 
@@ -462,7 +629,9 @@ footer {
   padding: 15px 25px;
   width: 200px;
   height: 240px;
-  margin: 20px 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border: 1px solid #bb335b;
 
   .project-name {

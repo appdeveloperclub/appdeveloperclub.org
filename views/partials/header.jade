@@ -41,6 +41,11 @@
                 li
                   a(href='/logout') Logout
           else
-            input.index-field(type='text', name='stanford_email' placeholder="Stanford Email")
-            a.btn.btn-primary.btn-lg.page-scroll.index-carousel-btn.index-regis-btn
-              | Submit
+            .nav-authentication
+              input.nav-field(type='text', name='stanford_email' placeholder="Stanford Email Address")
+              a.btn.btn-primary.nav-carousel-btn.nav-regis-btn
+                | Submit
+            .nav-registration
+              a.btn.btn-primary.nav-carousel-btn.nav-regis-btn.github-button(href='/auth/github')
+                i.fa.fa-github
+                | Sign-in with Github

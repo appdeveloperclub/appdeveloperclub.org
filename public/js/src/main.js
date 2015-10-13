@@ -42,8 +42,8 @@ $(document).ready(function() {
   /**
    * API for StanfordWHO.
    */
-  $('.index-regis-btn').click(function() {
-    var emailToTry = $('input.index-field').val();
+  $('.nav-regis-btn').click(function() {
+    var emailToTry = $('input.nav-field').val();
     var request = new XMLHttpRequest();
     var params = "query=" + emailToTry;
     request.open('POST', '/emailtest?' + params, true);
@@ -51,22 +51,23 @@ $(document).ready(function() {
       if (this.readyState == 4) {
         if (this.status == 200) {
           if (this.responseText !== '') {
-            $('.index-alert-success .index-carousel-alert-text').text('Hi, ' + this.responseText);
-            $('.index-alert-success').show()
-            $('.index-alert-failure').hide()
+            alertify.alert('Hi, ' + this.responseText);
+            $('.nav-registration').show()
+            $('.nav-authentication').hide()
           } else {
-            $('.index-alert-failure').show()
-            $('.index-alert-success').hide()
+            alertify.error('We could not find you in the Stanford database.');
+            $('.nav-authentication').show()
+            $('.nav-registration').hide()
           }
         } else {
-          $('.index-alert-failure').show()
-          $('.index-alert-success').hide()
+          alertify.error('Something went wrong. We ran into an error.');
+          $('.nav-authentication').show()
+          $('.nav-registration').hide()
           return;
         }
       }
     }
     request.send();
-    $('.index-alert-success').show()
   });
 
 

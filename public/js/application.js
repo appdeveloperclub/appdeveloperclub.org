@@ -18,4 +18,5 @@
 //= require lib/jquery.fittext
 //= require lib/jquery.quickfit
 //= require lib/move.min
+//= require lib/alertify.min
 //= require src/main
