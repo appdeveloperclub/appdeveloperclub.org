@@ -99,47 +99,47 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 /**
  * App Routes: Index page.
  */
-app.get('/', homeController.index);
-app.post('/emailtest', indexController.getemailtest);
-app.get('/explore/core', homeController.getCore);
-app.get('/explore/advisors', homeController.getAdvisors);
+app.get('/', indexController.index);
+// app.post('/emailtest', indexController.getemailtest);
+// app.get('/explore/core', homeController.getCore);
+// app.get('/explore/advisors', homeController.getAdvisors);
 
 
 /**
  * App Routes: Home and Explore Pages
  */
-app.get('/home', homeController.index);
-app.get('/explore/members', membersController.getMembers);
-app.get('/explore/members/:memberID', membersController.getSoloMember);
-app.get('/explore/projects', projectsController.getProjects);
-app.get('/explore/projects/:projectID', projectsController.getSoloProject);
+app.get('/home', indexController.index);
+// app.get('/explore/members', membersController.getMembers);
+// app.get('/explore/members/:memberID', membersController.getSoloMember);
+// app.get('/explore/projects', projectsController.getProjects);
+// app.get('/explore/projects/:projectID', projectsController.getSoloProject);
 
 
 /**
  * App Routes: Account Pages
  */
-app.get('/account', passportConf.isAuthenticated, userController.getAccount);
-app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
-app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
-app.get('/logout', userController.logout);
+// app.get('/account', passportConf.isAuthenticated, userController.getAccount);
+// app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
+// app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
+// app.get('/logout', userController.logout);
 
 
 /**
  * App Routes: Account Project Pages
  */
-app.get('/account/projects', passportConf.isAuthenticated, userController.getProjects);
-app.get('/account/projects/new', passportConf.isAuthenticated, userController.getNewProject);
-app.post('/account/projects/new', passportConf.isAuthenticated, userController.postNewProject);
-app.get('/account/projects/:projectID', passportConf.isAuthenticated, userController.getSoloProject);
+// app.get('/account/projects', passportConf.isAuthenticated, userController.getProjects);
+// app.get('/account/projects/new', passportConf.isAuthenticated, userController.getNewProject);
+// app.post('/account/projects/new', passportConf.isAuthenticated, userController.postNewProject);
+// app.get('/account/projects/:projectID', passportConf.isAuthenticated, userController.getSoloProject);
 
 
 /**
  * OAuth authentication routes. (Sign in with Github)
  */
-app.get('/auth/github', passport.authenticate('github'));
-app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/home');
-});
+// app.get('/auth/github', passport.authenticate('github'));
+// app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/' }), function(req, res) {
+//   res.redirect(req.session.returnTo || '/home');
+// });
 
 
 /**

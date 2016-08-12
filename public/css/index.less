@@ -5,8 +5,33 @@
 @import "vendor/bootstrap/bootstrap";
 @import "vendor/font-awesome/font-awesome";
 @import "vendor/bootstrap-social";
+@import "vendor/alertify-core.css";
 @import "themes/modern";
 
+
+/*************/
+/* Animation */
+/*************/
+
+@-webkit-keyframes typing {
+    from { width: 0 }
+    to { width: 730px }
+}
+
+@-moz-keyframes typing {
+    from { width: 0 }
+    to { width: 730px }
+}
+
+@-webkit-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
+@-moz-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
 
 /***************/
 /* Scaffolding */
@@ -82,13 +107,37 @@ header.index {
   .index-title {
     position: relative;
     text-align:center;
-    padding-top: 60px;
     font-family: "Avenir", sans-serif;
     color: #777777;
+    margin: 0 auto;
+    width: 730px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 30px;
+    margin-top: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid #777777;
+    -webkit-animation: typing 2s steps(26, end), /* # of steps = # of characters */
+    blink-caret 1s step-end infinite;
+    -moz-animation: typing 2s steps(26, end), /* # of steps = # of characters */
+    blink-caret 1s step-end infinite;
+
     -webkit-transition: font 1s ease, margin 1s ease;
     -moz-transition: font 1s ease, margin 1s ease;
     -o-transition: font 1s ease, margin 1s ease;
     -ms-transition: font 1s ease, margin 1s ease;
+
+    p {
+      font-size: 70px;
+      color: #777777;
+      margin: auto;
+
+      .colored {
+        color: #bb335b; /* The red part of the logo */
+      }
+    }
   }
 
   .index-subtitle {

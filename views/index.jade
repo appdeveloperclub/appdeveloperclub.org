@@ -16,8 +16,11 @@ html
 
     header.index
       .container-fluid.index-container
-        p.index-title
-          | AppDeveloperClub
+        .index-title
+          p
+            | &lt/
+            span.colored AppDeveloperClub
+            | &gt
         p.index-subtitle
           | Dream. Create. Repeat.
         a.btn.btn-primary.btn-lg.page-scroll.index-learn-more
@@ -35,42 +38,30 @@ html
             p.index-carousel-title
               | About Us
             p.index-carousel-text
-              | We're inventors. That's the TL;DR. The App Developer Club is an organization at Stanford University created as an outlet for hackers, designers, and entrepreneurs to come together and collaborate in order to produce apps you never knew you needed. But these are the apps that you deserve.
-        .item
-          .index-carousel-item
-            p.index-carousel-title
-              | Projects
-            p.index-carousel-text
-              | Check out some of our most successful projects. As a collective, the App Developer Club has developed and released apps for iOS, Android, and the Web. Feel free to browse the apps we've created.
-            a.btn.btn-primary.btn-lg.page-scroll.index-carousel-btn(href='/explore/projects')
-              | Check it Out
+              | We're inventors. The App Developer Club is an organization at Stanford University created for hackers, designers, and entrepreneurs to come together and collaborate in order to produce apps you never knew you needed. But these are the apps that you deserve.
         .item
           .index-carousel-item
             p.index-carousel-title
               | Connections
             p.index-carousel-text
-              | With mentors and connections in the tech industry, the App Developer Club is prepared to take on projects from the simple and minimal to the behemoths.
+              | With mentors and connections in the tech industry, the App Developer Club is prepared to help you take on projects from the simple and minimal to the behemoths.
             img(src='img/new_connections.png')
+        .item
+          .index-carousel-item
+            p.index-carousel-title
+              | Education
+            p.index-carousel-text
+              | Want to develop apps but don't know where to start? Head over to our 
+              a(href='https://learn.appdeveloperclub.org') tutorials and guides
+              |  center to get started. Feel free to shoot us an email if you'd like to contribute to our trove of educational resources, and we'll get you added as an ADC Tech Mentor.
         .item
           .index-carousel-item
             p.index-carousel-title
               | Get Involved
             p.index-carousel-text
-              | Are you interested in knowing how you can join the App Developer Club? Simply enter a Stanford email to validate your identity and sign-in.
-            input.index-field(type='text', name='stanford_email' placeholder="Stanford Email")
-            a.btn.btn-primary.btn-lg.page-scroll.index-carousel-btn.index-regis-btn
-              | Submit
-            .index-carousel-alert.alert-hidden.index-alert-success
-              i.fa.fa-2x.fa-check.alert-icon
-              p.index-carousel-text.index-carousel-alert-text
-                | Success message!
-              a.btn.btn-primary.btn-lg.page-scroll.index-carousel-btn.index-regis-btn.github-button(href='/auth/github')
-                i.fa.fa-github
-                | Sign-in with Github
-            .index-carousel-alert.alert-hidden.index-alert-failure
-              i.fa.fa-2x.fa-close.alert-icon
-              p.index-carousel-text.index-carousel-alert-text
-                | We could not find a Stanford student with that email
+              | Want to know how you can join the App Developer Club? Keep an eye and ear out for our events by subscribing to our 
+              a(href='https://mailman.stanford.edu/mailman/listinfo/app-developer-club') mailing list
+              |  today.
 
       a.carousel-control.left(href='#carousel', data-slide='prev')
         i.fa.fa-arrow-left.index-carousel-control
